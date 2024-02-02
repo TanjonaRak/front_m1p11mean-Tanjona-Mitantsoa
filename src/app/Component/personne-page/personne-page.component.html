@@ -1,0 +1,7 @@
+<h1>Personne </h1>
+<form #forme="ngForm" (ngSubmit)="PersonneADD(forme)">
+    <p><input type="text" placeholder="Nom" name="nom" ngModel required #nom="ngModel"></p>
+    <p><input type="text" placeholder="Prenom" name="prenom" ngModel required #prenom="ngModel"></p>
+    <p><input type="datetime-local" name="datenaissance" ngModel required #datenaissance="ngModel"></p>
+    <input type="submit" class="prt" value="Ajouter">
+</form>

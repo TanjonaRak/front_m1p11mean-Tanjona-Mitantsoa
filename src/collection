@@ -1,0 +1,110 @@
+Get All Proprietaires:
+Retrieve the list of all property owners.
+GET https://projectclouds5backend-production.up.railway.app/api/proprietaires
+
+Login:
+Log in a property owner.
+POST https://projectclouds5backend-production.up.railway.app/api/proprietaires/login
+
+Inscrire (Register):
+Register a new property owner.
+POST https://projectclouds5backend-production.up.railway.app/api/proprietaires/inscrire
+
+Nouveau Message:
+Send a new message.
+POST https://projectclouds5backend-production.up.railway.app/api/messagerie
+- Headers: Add Authorization header with a valid token.
+Auth:
+Validate the provided token.
+POST https://projectclouds5backend-production.up.railway.app/api/auth
+- Headers: Add Authorization header with a valid token.
+Discussions:
+Retrieve discussions.
+POST https://projectclouds5backend-production.up.railway.app/api/discussions
+- Headers: Add Authorization header with a valid token.
+Get Last Messages for Receiver:
+Retrieve last discussions with a specific receiver.
+POST https://projectclouds5backend-production.up.railway.app/api/discussions/last/{id_receiver}
+- Headers: Add Authorization header with a valid token.
+Get All Categories:
+Retrieve all categories.
+GET https://projectclouds5backend-production.up.railway.app/api/categories
+Get Categorie by ID:
+Retrieve a category by ID.
+GET https://projectclouds5backend-production.up.railway.app/api/categories/{id}
+
+Insert Categorie:
+Insert a new category.
+POST https://projectclouds5backend-production.up.railway.app/api/categories
+
+Delete Categorie:
+Delete a category by ID.
+DELETE https://projectclouds5backend-production.up.railway.app/api/categories/{id}
+
+Get All Parcelles:
+    Retrieve all parcels.
+GET https://projectclouds5backend-production.up.railway.app/api/parcelles
+
+Insert Parcelle:
+    Insert a new parcel.
+POST https://projectclouds5backend-production.up.railway.app/api/parcelles
+
+Get Parcelle by ID:
+    Retrieve a parcel by ID.
+GET https://projectclouds5backend-production.up.railway.app/api/parcelles/{id}
+
+Update Surface of Parcelle:
+    Update the surface of a parcel.
+PUT https://projectclouds5backend-production.up.railway.app/api/parcelles/surface
+
+Update Rendement of Parcelle:
+    Update the rendement of a parcel.
+PUT https://projectclouds5backend-production.up.railway.app/api/parcelles/rendement
+
+Delete Parcelle:
+    Delete a parcel by ID.
+DELETE https://projectclouds5backend-production.up.railway.app/api/parcelles/{id}
+
+Get All Plantes:
+    Retrieve all plants.
+GET https://projectclouds5backend-production.up.railway.app/api/plantes
+
+Get Plantes by Category:
+    Retrieve plants by category.
+GET https://projectclouds5backend-production.up.railway.app/api/plantes/categories/{id_categorie}
+
+Get Game Plantes:
+    Retrieve plants for games.
+GET https://projectclouds5backend-production.up.railway.app/api/plantes/games
+
+Get Plante by ID:
+GET `https://projectclouds5backend-production.up
+
+Insert Plante:
+    Insert a new plant.
+POST https://projectclouds5backend-production.up.railway.app/api/plantes
+
+Update Plante:
+    Update plant details.
+PUT https://projectclouds5backend-production.up.railway.app/api/plantes
+
+Delete Plante:
+    Delete a plant by ID.
+DELETE https://projectclouds5backend-production.up.railway.app/api/plantes/delete
+
+Get Plante Utiliser State:
+    Retrieve plant utilization state.
+GET https://projectclouds5backend-production.up.railway.app/api/statistiques/plante-utiliser
+
+Get Top Plante Utiliser State:
+    Retrieve top plant utilization state.
+GET https://projectclouds5backend-production.up.railway.app/api/statistiques/plante-utiliser/{limit}
+
+Get Benefice State:
+    Retrieve benefice state for a specific month and year.
+GET https://projectclouds5backend-production.up.railway.app/api/statistiques/benefice/{mois}&&{anne}
+
+Get Global Statistique:
+    Retrieve global statistics.
+GET https://projectclouds5backend-production.up.railway.app/api/statistiques/globale
+projectclouds5backend-production.up.railway.app
