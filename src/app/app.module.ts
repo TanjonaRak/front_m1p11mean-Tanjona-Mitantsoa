@@ -9,13 +9,15 @@ import { RouterModule } from '@angular/router';
 import { AjoutPersonneComponent } from './Component/ajout-personne/ajout-personne.component';
 import {  HttpClientModule } from '@angular/common/http';
 import { PersonneServiceService } from './service/personne-service.service';
+import { ListAppointmentComponent } from './Employe/list-appointment/list-appointment.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     PersonnePageComponent,
-    AjoutPersonneComponent
+    AjoutPersonneComponent,
+    ListAppointmentComponent
   ],
   imports: [
     BrowserModule,  
