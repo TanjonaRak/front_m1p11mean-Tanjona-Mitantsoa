@@ -110,3 +110,10 @@ export interface task {
 
 // tanjonafanirymiaro
 //     tuc7UbAH36NR8hii
+
+export interface expenses{
+    _id : string,
+    name_expense :string,
+    amount : number,
+    date :Date
+}
