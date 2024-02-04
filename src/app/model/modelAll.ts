@@ -117,3 +117,6 @@ export interface expenses{
     amount : number,
     date :Date
 }
+
+// mongodb+srv:
+//tanjonafanirymiaro:tuc7UbAH36NR8hii@cluster0.tpdaafn.mongodb.net/
