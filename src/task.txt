@@ -5,7 +5,7 @@
 
    ==> Mitantsoa :
        Client :   
-            => S'inscrire et login (avec token) (task 1)
+            =>S'inscrire et login (avec token) (task 1)
             =>Prise rendez-vous avec les services (task 3)
             =>Historique des rendez-vous (liste avec recherche)(task 4)
             =>Rappel rendez-vous (Notification ou email)(task 6)

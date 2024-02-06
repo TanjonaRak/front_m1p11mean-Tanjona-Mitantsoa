@@ -10,6 +10,9 @@ import { AjoutPersonneComponent } from './Component/ajout-personne/ajout-personn
 import {  HttpClientModule } from '@angular/common/http';
 import { PersonneServiceService } from './service/personne-service.service';
 import { ListAppointmentComponent } from './Employe/list-appointment/list-appointment.component';
+import { HomeComponent } from './Component/home/home.component';
+
+
 
 
 @NgModule({
@@ -17,7 +20,9 @@ import { ListAppointmentComponent } from './Employe/list-appointment/list-appoin
     AppComponent,
     PersonnePageComponent,
     AjoutPersonneComponent,
-    ListAppointmentComponent
+    ListAppointmentComponent,
+    HomeComponent
+    // HomeComponent
   ],
   imports: [
     BrowserModule,  
@@ -32,6 +37,10 @@ import { ListAppointmentComponent } from './Employe/list-appointment/list-appoin
         {
           path:'ajout-personne',
           component:AjoutPersonneComponent
+        },
+        {
+          path:'home',
+          component:HomeComponent
         }
     ])
   ],
