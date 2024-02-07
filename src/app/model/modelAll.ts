@@ -1,15 +1,6 @@
 
 
-export interface appointment{
-    _id :string,
-    client:Client,
-    service:Service,
-    employee :Employee,
-    dateAppoitment : Date,
-    hours :string,
-    etat : number,
-    date_create : Date
-}
+
 
 
 export interface Client{
@@ -33,13 +24,15 @@ export interface Service{
 
 
 export interface Employee {
-    _id : string,
+    _id ?: string,
     name : string,
     first_name :string,
     email : string,
     password :string,
     etat :number,
-    photo :string
+    photo ?:string,
+    service ?: Service[],
+    login : string
 }
 
 
@@ -52,10 +45,24 @@ export interface working_hours{
 }
 
 
+
+
+/* MIALA ITO */
 export interface Employee_Service {
     _id : string,
     employee :Employee,
     services : Service[]
+}
+
+export interface appointment{
+    _id :string,
+    client:Client,
+    service:Service,
+    employee :Employee,
+    dateAppoitment : Date,
+    hours :string,
+    etat : number,
+    date_create : Date
 }
 
 

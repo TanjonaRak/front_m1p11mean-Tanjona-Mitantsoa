@@ -11,6 +11,7 @@ import {  HttpClientModule } from '@angular/common/http';
 import { PersonneServiceService } from './service/personne-service.service';
 import { ListAppointmentComponent } from './Employe/list-appointment/list-appointment.component';
 import { HomeComponent } from './Component/home/home.component';
+import { AddEmployeeComponent } from './Employee/add-employee/add-employee.component';
 
 
 
@@ -21,7 +22,8 @@ import { HomeComponent } from './Component/home/home.component';
     PersonnePageComponent,
     AjoutPersonneComponent,
     ListAppointmentComponent,
-    HomeComponent
+    HomeComponent,
+    AddEmployeeComponent
     // HomeComponent
   ],
   imports: [
@@ -41,6 +43,9 @@ import { HomeComponent } from './Component/home/home.component';
         {
           path:'home',
           component:HomeComponent
+        },{
+          path : 'employee/create',
+          component : AddEmployeeComponent
         }
     ])
   ],
