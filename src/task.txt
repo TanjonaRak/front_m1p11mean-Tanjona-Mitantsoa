@@ -29,7 +29,7 @@
             =>Gestion profil et horaire de travail (task 2) 
             =>Suivie tache (task 6)
         Manager : 
-            =>Gestion personnel (task 1 )
+            =>Gestion personnel (task 1 )(CRUD)
             =>Statistique :
                 =>Temps moyen de travail pour chaque employé (task 7)
                 =>Avoir le bénéfice par mois en entrant les dépenses (task 8)

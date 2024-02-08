@@ -2,6 +2,9 @@ import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Employee, Service } from 'src/app/model/modelAll';
 import { EmployeeServiceService } from 'src/app/service/employee-service.service';
+import { MyModalComponent } from 'src/app/my-modal/my-modal.component';
+import { MatDialog } from '@angular/material/dialog';
+
 
 @Component({
   selector: 'app-add-employee',
@@ -10,7 +13,10 @@ import { EmployeeServiceService } from 'src/app/service/employee-service.service
 })
 export class AddEmployeeComponent {
 
-  constructor (private apiService : EmployeeServiceService){
+  modalTitle = 'My Modal';
+  modalContent = '<p>This is the <strong>content</strong> of my modal.</p>';
+
+  constructor (private apiService : EmployeeServiceService,public modal : MatDialog ){
   }
 
 //{
@@ -77,6 +83,24 @@ export class AddEmployeeComponent {
 
   Pagination(){
     console.log("Click")  
+  }
+
+  openDialog(employee:Employee): void {
+    const dialogRef = this.modal.open(MyModalComponent,{
+      data:{
+        title:"Update People",
+        content : "<button mat-button (click)='get()'>GET</button>",
+        employee :employee
+      }
+    });
+
+    dialogRef.afterClosed().subscribe((result:any) => {
+      console.log('The dialog was closed');
+    });
+  }
+
+  get(){
+    console.log("GVUBKhkb")
   }
 
 

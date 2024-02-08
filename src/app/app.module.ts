@@ -12,7 +12,9 @@ import { PersonneServiceService } from './service/personne-service.service';
 import { ListAppointmentComponent } from './Employe/list-appointment/list-appointment.component';
 import { HomeComponent } from './Component/home/home.component';
 import { AddEmployeeComponent } from './Employee/add-employee/add-employee.component';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MyModalComponent } from './my-modal/my-modal.component';
+import { MatDialogModule } from '@angular/material/dialog'
 
 
 
@@ -23,13 +25,15 @@ import { AddEmployeeComponent } from './Employee/add-employee/add-employee.compo
     AjoutPersonneComponent,
     ListAppointmentComponent,
     HomeComponent,
-    AddEmployeeComponent
+    AddEmployeeComponent,
     // HomeComponent
+    MyModalComponent
   ],
   imports: [
     BrowserModule,  
     AppRoutingModule,
     FormsModule,
+    MatDialogModule,
     HttpClientModule,
     RouterModule.forRoot([
         {
@@ -47,7 +51,8 @@ import { AddEmployeeComponent } from './Employee/add-employee/add-employee.compo
           path : 'employee/create',
           component : AddEmployeeComponent
         }
-    ])
+    ]),
+    BrowserAnimationsModule
   ],
   providers: [PersonneServiceService],
   bootstrap: [AppComponent]

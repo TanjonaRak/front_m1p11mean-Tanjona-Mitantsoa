@@ -1,0 +1,29 @@
+/* modal.component.css */
+.modal {
+    position: fixed;
+    top: 50px; /* Ajustez la valeur en fonction de votre design */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Modal en haut au centre */
+.modal-top-center {
+    position: fixed;
+    top: 50px; /* Ajustez la valeur en fonction de votre design */
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  /* Modal en bas au centre */
+  .modal-bottom-center {
+    position: fixed;
+    bottom: 50px; /* Ajustez la valeur en fonction de votre design */
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  

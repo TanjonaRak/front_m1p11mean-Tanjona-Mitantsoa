@@ -32,7 +32,10 @@ export interface Employee {
     etat :number,
     photo ?:string,
     service ?: Service[],
-    login : string
+    login : string,
+    time_between ?: string,
+    end_time ?:string,
+    date_create ?: string 
 }
 
 

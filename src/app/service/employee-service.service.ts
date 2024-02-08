@@ -31,4 +31,13 @@ export class EmployeeServiceService {
       throw error;
     }
   }
+
+  UpdateEmployee(employee:Employee):Observable<any>{
+    try {
+      let res = this.httpClient.put<any>(url+this.url_base,JSON.parse(JSON.stringify(employee)))
+      return res;     
+    } catch (error) {
+      throw error
+    }
+  }
 }

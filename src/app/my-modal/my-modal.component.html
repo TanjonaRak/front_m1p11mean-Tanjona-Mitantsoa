@@ -1,0 +1,27 @@
+
+
+<!-- 
+<h1 mat-dialog-title>{{title}}</h1>
+<div mat-dialog-content>
+    <div [innerHTML]="content"></div>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="closeDialog()">Close</button>
+</div> -->
+
+<h1 mat-dialog-title>{{title}}</h1>
+<div  mat-dialog-content style="justify-content: flex-start; align-items: flex-start;">
+    <!-- <div [innerHTML]="getSafeContent()"></div> -->
+    <form #forme="ngForm" (ngSubmit)="UpdateEmployee(forme)">
+        <p><input type="text" placeholder="name" name="name" [(ngModel)]="employee_to_update.name" required #name="ngModel" ></p>
+        <p><input type="text" placeholder="first name" name="first_name" [(ngModel)]="employee_to_update.first_name" required #first_name="ngModel"></p>
+        <p><input type="text" placeholder="login" name="login" [(ngModel)]="employee_to_update.login" required #login="ngModel"></p>
+        <p><input type="text" placeholder="email" name="email" [(ngModel)]="employee_to_update.email" required #email="ngModel"></p>
+        <p><input type="password" placeholder="password" name="password" [(ngModel)]="employee_to_update.password" required #password="ngModel"></p>
+        <input type="submit" class="prt" value="Update">
+    </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="closeDialog()">Close</button>
+</div>
+

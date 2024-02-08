@@ -8,21 +8,25 @@
     <p><input type="text" placeholder="login" name="login" ngModel required #login="ngModel"></p>
     <p><input type="text" placeholder="email" name="email" ngModel required #email="ngModel"></p>
     <p><input type="password" placeholder="password" name="password" ngModel required #password="ngModel"></p>
-    <input type="submit" class="prt" value="Ajouter">
+    <input type="submit" class="prt" value="Create">
 </form>
 
 <table border='1'>
     <tr>
         <th>Name</th>
         <th>First Name</th>
+        <th>login</th>
         <th>email</th>
     </tr>
     <tr *ngFor ="let employee of employees">
         <td>{{employee.name}}</td>
         <td>{{employee.first_name}}</td>
+        <td>{{employee.login}}</td>
         <td>{{employee.email}}</td>
+        <td><button mat-button (click)="openDialog(employee)">Open Modal</button></td>
     </tr>
 </table>
+<!-- <app-my-modal [title]="modalTitle" [content]="modalContent" ></app-my-modal> -->
 <nav>
     <ul class="pagination">
         <li><a (click)="Pagination()" ><span aria-hidden="true" ><<</span></a></li>
