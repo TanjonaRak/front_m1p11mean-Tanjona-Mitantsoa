@@ -14,7 +14,11 @@ import { HomeComponent } from './Component/home/home.component';
 import { AddEmployeeComponent } from './Employee/add-employee/add-employee.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MyModalComponent } from './my-modal/my-modal.component';
-import { MatDialogModule } from '@angular/material/dialog'
+import { MatDialogModule } from '@angular/material/dialog';
+import { HeaderMenuComponent } from './Component/header-menu/header-menu.component';
+import { FooterComponent } from './Component/footer/footer.component';
+import { ServicesListComponent } from './Front-Office/services-list/services-list.component';
+import { ServiceComponent } from './Front-Office/service/service.component'
 
 
 
@@ -27,7 +31,11 @@ import { MatDialogModule } from '@angular/material/dialog'
     HomeComponent,
     AddEmployeeComponent,
     // HomeComponent
-    MyModalComponent
+    MyModalComponent,
+    HeaderMenuComponent,
+    FooterComponent,
+    ServicesListComponent,
+    ServiceComponent
   ],
   imports: [
     BrowserModule,  
@@ -45,11 +53,18 @@ import { MatDialogModule } from '@angular/material/dialog'
           component:AjoutPersonneComponent
         },
         {
-          path:'home',
+          path:'',
           component:HomeComponent
         },{
           path : 'employee/create',
           component : AddEmployeeComponent
+        },
+        {
+          path : 'service',
+          component : ServiceComponent
+        }, {
+          path:'home',
+          component:HomeComponent
         }
     ]),
     BrowserAnimationsModule

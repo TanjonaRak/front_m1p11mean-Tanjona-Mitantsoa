@@ -19,7 +19,8 @@ export interface Service{
     delay :string,
     price : number,
     commission : number,
-    photo : string
+    photo : string,
+    desc?:string
 }
 
 
