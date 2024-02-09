@@ -1,5 +1,9 @@
 import { Component } from '@angular/core';
 
+
+function delay(ms:number){
+  return new Promise(resolve=>setTimeout(resolve,ms))
+}
 @Component({
   selector: 'app-service',
   templateUrl: './service.component.html',
@@ -11,13 +15,13 @@ export class ServiceComponent {
   
 
   ngOnInit(): void {
-    for(let i = 0;i<100000000;i++){
-      // console.log("eefef") 
-      if(i==9999999){
-        this.loading = false
-      }
-    }
+    this.LoaderStatic();
     console.log(this.loading)
+  }
+
+  async LoaderStatic (){
+    await delay(500);
+    this.loading = false
   }
 
 }
