@@ -18,7 +18,11 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { HeaderMenuComponent } from './Component/header-menu/header-menu.component';
 import { FooterComponent } from './Component/footer/footer.component';
 import { ServicesListComponent } from './Front-Office/services-list/services-list.component';
-import { ServiceComponent } from './Front-Office/service/service.component'
+import { ServiceComponent } from './Front-Office/service/service.component';
+import { LoginClientComponent } from './Front-Office/login-client/login-client.component';
+import { LoginBackOfficeComponent } from './Component/login-back-office/login-back-office.component';
+import { HeaderManagerComponent } from './Component/header-manager/header-manager.component';
+import { HomeManagerComponent } from './Back-office/home-manager/home-manager.component'
 
 
 
@@ -35,7 +39,11 @@ import { ServiceComponent } from './Front-Office/service/service.component'
     HeaderMenuComponent,
     FooterComponent,
     ServicesListComponent,
-    ServiceComponent
+    ServiceComponent,
+    LoginClientComponent,
+    LoginBackOfficeComponent,
+    HeaderManagerComponent,
+    HomeManagerComponent
   ],
   imports: [
     BrowserModule,  
@@ -65,6 +73,17 @@ import { ServiceComponent } from './Front-Office/service/service.component'
         }, {
           path:'home',
           component:HomeComponent
+        },
+        {
+          path:'login',
+          component:LoginClientComponent
+        },{
+          path:'login-admin',
+          component:LoginBackOfficeComponent
+        },
+        {
+          path:'home-manager',
+          component:HomeManagerComponent
         }
     ]),
     BrowserAnimationsModule
