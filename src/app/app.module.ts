@@ -22,7 +22,9 @@ import { ServiceComponent } from './Front-Office/service/service.component';
 import { LoginClientComponent } from './Front-Office/login-client/login-client.component';
 import { LoginBackOfficeComponent } from './Component/login-back-office/login-back-office.component';
 import { HeaderManagerComponent } from './Component/header-manager/header-manager.component';
-import { HomeManagerComponent } from './Back-office/home-manager/home-manager.component'
+import { HomeManagerComponent } from './Back-office/home-manager/home-manager.component';
+import { TableComponent } from './Component/table/table.component'
+// import { TieredMenuModule } from 'primeng/tieredmenu';
 
 
 
@@ -43,13 +45,15 @@ import { HomeManagerComponent } from './Back-office/home-manager/home-manager.co
     LoginClientComponent,
     LoginBackOfficeComponent,
     HeaderManagerComponent,
-    HomeManagerComponent
+    HomeManagerComponent,
+    TableComponent
   ],
   imports: [
     BrowserModule,  
     AppRoutingModule,
     FormsModule,
     MatDialogModule,
+    // TieredMenuModule,
     HttpClientModule,
     RouterModule.forRoot([
         {

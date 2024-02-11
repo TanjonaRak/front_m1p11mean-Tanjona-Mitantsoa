@@ -20,14 +20,14 @@
         <div class="navbar-brand-wrapper d-flex align-items-center col-auto">
             <!-- Logo For Mobile View -->
             <a class="navbar-brand navbar-brand-mobile" href="/">
-                <img class="img-fluid w-100" src="public/img/logo-mini.png" alt="Graindashboard">
+                <img class="img-fluid w-100" src="assets/img/logo-mini.png" alt="Graindashboard">
             </a>
             <!-- End Logo For Mobile View -->
 
             <!-- Logo For Desktop View -->
             <a class="navbar-brand navbar-brand-desktop" href="/">
-                <img class="side-nav-show-on-closed" src="public/img/logo-mini.png" alt="Graindashboard" style="width: auto; height: 33px;">
-                <img class="side-nav-hide-on-closed" src="public/img/logo.png" alt="Graindashboard" style="width: auto; height: 33px;">
+                <img class="side-nav-show-on-closed" src="assets/img/logo-mini.png" alt="Graindashboard" style="width: auto; height: 33px;">
+                <img class="side-nav-hide-on-closed" src="assets/img/logo.png" alt="Graindashboard" style="width: auto; height: 33px;">
             </a>
             <!-- End Logo For Desktop View -->
         </div>
@@ -122,8 +122,14 @@
 </header>
 <!-- End Header -->
 
+<!-- <div class="card flex justify-content-center">
+    <p-tieredMenu [model]="items"></p-tieredMenu>
+</div> -->
+
+
 <main class="main">
     <!-- Sidebar Nav -->
+    
     <aside id="sidebar" class="js-custom-scroll side-nav">
         <ul id="sideNav" class="side-nav-menu side-nav-menu-top-level mb-0">
             <!-- Title -->
@@ -158,8 +164,7 @@
 
             <!-- Users -->
             <li class="side-nav-menu-item side-nav-has-menu">
-                <a class="side-nav-menu-link media align-items-center" href="#"
-                   data-target="#subUsers">
+                <a class="side-nav-menu-link media align-items-center" href="#"  data-target="#subUsers">
                   <span class="side-nav-menu-icon d-flex mr-3">
                     <i class="gd-user"></i>
                   </span>
@@ -185,8 +190,7 @@
 
             <!-- Authentication -->
             <li class="side-nav-menu-item side-nav-has-menu">
-                <a class="side-nav-menu-link media align-items-center" href="#"
-                   data-target="#subPages">
+                <a class="side-nav-menu-link media align-items-center" href="#" data-target="#subPages">
               <span class="side-nav-menu-icon d-flex mr-3">
                 <i class="gd-lock"></i>
               </span>
@@ -244,8 +248,35 @@
         </ul>
     </aside>
     <!-- End Sidebar Nav -->
-</main>
+    <div class="content">
+        <div class="py-4 px-3 px-md-4">
+            <div class="card mb-3 mb-md-4">
 
+                <div class="card-body">
+                    <!-- Breadcrumb -->
+                    <nav class="d-none d-md-block" aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item">
+                                <a href="#">Users</a>
+                            </li>
+                            <li class="breadcrumb-item active" aria-current="page">All Users</li>
+                        </ol>
+                    </nav>
+                    <!-- End Breadcrumb -->
+
+                    <div class="mb-3 mb-md-4 d-flex justify-content-between">
+                        <div class="h3 mb-0">Users</div>
+                    </div>
+
+
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<!-- <script src="./graindashboard.js"></script>
+<script src="./graindashboard.vendor.js"></script> -->
 
 
 
