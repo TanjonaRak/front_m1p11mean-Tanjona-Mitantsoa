@@ -29,7 +29,8 @@ import { ComponentBaseComponent } from './Component/component-base/component-bas
 import { AllUserComponent } from './Back-office/all-user/all-user.component';
 import { ComponentBaseEmployeeComponent } from './Component/component-base-employee/component-base-employee.component';
 import { HomeEmployeeComponent } from './Employee/home-employee/home-employee.component';
-import { ComponentListUserComponent } from './Back-office/component-list-user/component-list-user.component'
+import { ComponentListUserComponent } from './Back-office/component-list-user/component-list-user.component';
+import { NewEmployeeComponent } from './Back-office/new-employee/new-employee.component'
 // import { TieredMenuModule } from 'primeng/tieredmenu';
 
 
@@ -58,7 +59,8 @@ import { ComponentListUserComponent } from './Back-office/component-list-user/co
     AllUserComponent,
     ComponentBaseEmployeeComponent,
     HomeEmployeeComponent,
-    ComponentListUserComponent
+    ComponentListUserComponent,
+    NewEmployeeComponent
   ],
   imports: [
     BrowserModule,  
@@ -106,6 +108,9 @@ import { ComponentListUserComponent } from './Back-office/component-list-user/co
         },{
           path:'home-employee',
           component:HomeEmployeeComponent
+        },{
+          path:'new-employee',
+          component:NewEmployeeComponent
         }
     ]),
     BrowserAnimationsModule

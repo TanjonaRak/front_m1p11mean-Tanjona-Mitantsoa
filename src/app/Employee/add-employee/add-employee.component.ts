@@ -4,6 +4,7 @@ import { Employee, Service } from 'src/app/model/modelAll';
 import { EmployeeServiceService } from 'src/app/service/employee-service.service';
 import { MyModalComponent } from 'src/app/my-modal/my-modal.component';
 import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -16,17 +17,8 @@ export class AddEmployeeComponent {
   modalTitle = 'My Modal';
   modalContent = '<p>This is the <strong>content</strong> of my modal.</p>';
 
-  constructor (private apiService : EmployeeServiceService,public modal : MatDialog ){
+  constructor (private apiService : EmployeeServiceService,public modal : MatDialog,private router:Router ){
   }
-
-//{
-//     "name" :"RAKOTO",
-//     "first_name" : "ROBERT",
-//     "login" : "LOGIN",
-//     "email":"tanjona@gmail.com",
-//     "password":"12345879655",
-//     "service":[{"_id":"qscs584459874cqs","name":"makup"},{"_id":"sdcq5855454zd8","name":"coiffeur"}]
-// }
 
   employee_to_add = {
     name : "",
@@ -39,10 +31,6 @@ export class AddEmployeeComponent {
     photo : ""
   } as Employee
 
-  offset = 0 ;
-  limit = 3;
-
-  paginate = [1,2,3,4,5]
 
   employees = [] as Employee [];
 
@@ -52,12 +40,12 @@ export class AddEmployeeComponent {
   ] as Service[];
 
   ngOnInit(): void {
-    this.getEmployee();
+    // this.getEmployee();
   }
 
 
   createEmployee(form:NgForm) {
-    // console.log(form.valid)
+    console.log("vdfvfgeg")
     this.employee_to_add.name = form.value.name
     this.employee_to_add.first_name = form.value.first_name
     this.employee_to_add.login = form.value.login
@@ -66,24 +54,15 @@ export class AddEmployeeComponent {
     if(form.valid){
       this.apiService.CreateEmployee(this.employee_to_add).subscribe((res:any)=>{
         console.log(res)
+        if(res.status == 200){
+          this.router.navigate(["/all-user"])
+        }
       })
     }else{
       
     }
   }
 
-  getEmployee (){
-    this.apiService.getEmployee(this.offset,this.limit)?.subscribe((res:any)=>{
-        console.log(res)
-        if(res.status === 200){
-          this.employees = res.data ; 
-        }
-    })
-  }
-
-  Pagination(){
-    console.log("Click")  
-  }
 
   openDialog(employee:Employee): void {
     const dialogRef = this.modal.open(MyModalComponent,{
