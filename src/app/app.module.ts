@@ -23,7 +23,13 @@ import { LoginClientComponent } from './Front-Office/login-client/login-client.c
 import { LoginBackOfficeComponent } from './Component/login-back-office/login-back-office.component';
 import { HeaderManagerComponent } from './Component/header-manager/header-manager.component';
 import { HomeManagerComponent } from './Back-office/home-manager/home-manager.component';
-import { TableComponent } from './Component/table/table.component'
+import { TableComponent } from './Component/table/table.component';
+import { CreateEmployeeComponent } from './Component/create-employee/create-employee.component';
+import { ComponentBaseComponent } from './Component/component-base/component-base.component';
+import { AllUserComponent } from './Back-office/all-user/all-user.component';
+import { ComponentBaseEmployeeComponent } from './Component/component-base-employee/component-base-employee.component';
+import { HomeEmployeeComponent } from './Employee/home-employee/home-employee.component';
+import { ComponentListUserComponent } from './Back-office/component-list-user/component-list-user.component'
 // import { TieredMenuModule } from 'primeng/tieredmenu';
 
 
@@ -46,7 +52,13 @@ import { TableComponent } from './Component/table/table.component'
     LoginBackOfficeComponent,
     HeaderManagerComponent,
     HomeManagerComponent,
-    TableComponent
+    TableComponent,
+    CreateEmployeeComponent,
+    ComponentBaseComponent,
+    AllUserComponent,
+    ComponentBaseEmployeeComponent,
+    HomeEmployeeComponent,
+    ComponentListUserComponent
   ],
   imports: [
     BrowserModule,  
@@ -88,6 +100,12 @@ import { TableComponent } from './Component/table/table.component'
         {
           path:'home-manager',
           component:HomeManagerComponent
+        },{
+          path:'all-user',
+          component : AllUserComponent
+        },{
+          path:'home-employee',
+          component:HomeEmployeeComponent
         }
     ]),
     BrowserAnimationsModule

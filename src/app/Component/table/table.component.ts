@@ -7,7 +7,7 @@ import { Component,Input } from '@angular/core';
 })
 export class TableComponent {
 
-  @Input() columns !: any[];
-  @Input() data!:any[];
+    @Input() columns !: any[];
+    @Input() data!:any[];
 
 }

@@ -1,6 +1,6 @@
 
 
-
+<!-- 
 <h1>Create Employee</h1>
 <form #forme="ngForm" (ngSubmit)="createEmployee(forme)">
     <p><input type="text" placeholder="name" name="name" ngModel required #name="ngModel"></p>
@@ -9,7 +9,101 @@
     <p><input type="text" placeholder="email" name="email" ngModel required #email="ngModel"></p>
     <p><input type="password" placeholder="password" name="password" ngModel required #password="ngModel"></p>
     <input type="submit" class="prt" value="Create">
-</form>
+</form> -->
+
+<div class="content">
+    <div class="py-4 px-3 px-md-4">
+        <div class="card mb-3 mb-md-4">
+
+            <div class="card-body">
+                <!-- Breadcrumb -->
+                <nav class="d-none d-md-block" aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item">
+                            <a href="#">Users</a>
+                        </li>
+                        <li class="breadcrumb-item active" aria-current="page">Create New User</li>
+                    </ol>
+                </nav>
+                <!-- End Breadcrumb -->
+
+                <div class="mb-3 mb-md-4 d-flex justify-content-between">
+                    <div class="h3 mb-0">Create New User</div>
+                </div>
+
+
+                <!-- Form -->
+                <div>
+                    <form #forme="ngForm" (ngSubmit)="createEmployee(forme)">
+                        <div class="form-row">
+                            <div class="form-group col-12 col-md-6">
+                                <label for="name">Name</label>
+                                <input type="text" class="form-control" value="" id="name" name="name" placeholder="User Name" ngModel required #name="ngModel">
+                            </div>
+                            <div class="form-group col-12 col-md-6">
+                                <label for="name">First Name</label>
+                                <input type="text" class="form-control" value="" id="name" placeholder="User Name" name="first_name" ngModel required #first_name="ngModel">
+                            </div>
+                            <div class="form-group col-12 col-md-6">
+                                <label for="email">Email</label>
+                                <input type="email" class="form-control" value="" id="email" name="email" placeholder="User Email" ngModel required #email="ngModel">
+                            </div>
+                            <div class="form-group col-12 col-md-6">
+                                <label for="email">Login</label>
+                                <input type="email" class="form-control" value="" id="email" name="login" placeholder="Login" ngModel required #login="ngModel">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-12 col-md-6">
+                                <label for="password">Password</label>
+                                <input type="password" class="form-control" value="" id="password" name="password" placeholder="New Password"  ngModel required #password="ngModel">
+                            </div>
+                            <div class="form-group col-12 col-md-6">
+                                <label for="password_confirm">Confirm Password</label>
+                                <input type="password" class="form-control" value="" id="password_confirm" name="password_confirm" placeholder="Confirm Password">
+                            </div>
+                        </div>
+                        <div class="custom-control custom-switch mb-2">
+                            <input type="checkbox" class="custom-control-input" id="randomPassword">
+                            <label class="custom-control-label" for="randomPassword">Set Random Password</label>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary float-right">Create</button>
+                    </form>
+                </div>
+                <!-- End Form -->
+            </div>
+        </div>
+
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="small p-3 px-md-4 mt-auto">
+        <div class="row justify-content-between">
+            <div class="col-lg text-center text-lg-left mb-3 mb-lg-0">
+                <ul class="list-dot list-inline mb-0">
+                    <li class="list-dot-item list-dot-item-not list-inline-item mr-lg-2"><a class="link-dark" href="#">FAQ</a></li>
+                    <li class="list-dot-item list-inline-item mr-lg-2"><a class="link-dark" href="#">Support</a></li>
+                    <li class="list-dot-item list-inline-item mr-lg-2"><a class="link-dark" href="#">Contact us</a></li>
+                </ul>
+            </div>
+
+            <div class="col-lg text-center mb-3 mb-lg-0">
+                <ul class="list-inline mb-0">
+                    <li class="list-inline-item mx-2"><a class="link-muted" href="#"><i class="gd-twitter-alt"></i></a></li>
+                    <li class="list-inline-item mx-2"><a class="link-muted" href="#"><i class="gd-facebook"></i></a></li>
+                    <li class="list-inline-item mx-2"><a class="link-muted" href="#"><i class="gd-github"></i></a></li>
+                </ul>
+            </div>
+
+            <div class="col-lg text-center text-lg-right">
+                &copy; 2019 Graindashboard. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+    <!-- End Footer -->
+</div>
 
 <table border='1'>
     <tr>
