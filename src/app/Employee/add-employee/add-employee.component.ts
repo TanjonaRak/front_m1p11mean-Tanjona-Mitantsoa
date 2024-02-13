@@ -45,7 +45,7 @@ export class AddEmployeeComponent {
 
 
   createEmployee(form:NgForm) {
-    console.log("vdfvfgeg")
+    // console.log("vdfvfgeg")
     this.employee_to_add.name = form.value.name
     this.employee_to_add.first_name = form.value.first_name
     this.employee_to_add.login = form.value.login

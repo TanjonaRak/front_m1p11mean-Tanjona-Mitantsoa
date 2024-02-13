@@ -30,7 +30,9 @@ import { AllUserComponent } from './Back-office/all-user/all-user.component';
 import { ComponentBaseEmployeeComponent } from './Component/component-base-employee/component-base-employee.component';
 import { HomeEmployeeComponent } from './Employee/home-employee/home-employee.component';
 import { ComponentListUserComponent } from './Back-office/component-list-user/component-list-user.component';
-import { NewEmployeeComponent } from './Back-office/new-employee/new-employee.component'
+import { NewEmployeeComponent } from './Back-office/new-employee/new-employee.component';
+import { AddNewServiceComponent } from './Back-office/add-new-service/add-new-service.component';
+import { AddNewServicePageComponent } from './Back-office/add-new-service-page/add-new-service-page.component'
 // import { TieredMenuModule } from 'primeng/tieredmenu';
 
 
@@ -60,7 +62,9 @@ import { NewEmployeeComponent } from './Back-office/new-employee/new-employee.co
     ComponentBaseEmployeeComponent,
     HomeEmployeeComponent,
     ComponentListUserComponent,
-    NewEmployeeComponent
+    NewEmployeeComponent,
+    AddNewServiceComponent,
+    AddNewServicePageComponent
   ],
   imports: [
     BrowserModule,  
@@ -111,6 +115,9 @@ import { NewEmployeeComponent } from './Back-office/new-employee/new-employee.co
         },{
           path:'new-employee',
           component:NewEmployeeComponent
+        },{
+          path :"new-service",
+          component:AddNewServicePageComponent
         }
     ]),
     BrowserAnimationsModule
