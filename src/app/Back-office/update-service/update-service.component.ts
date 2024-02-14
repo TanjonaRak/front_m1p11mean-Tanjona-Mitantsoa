@@ -2,9 +2,10 @@ import { Component,Input,Inject } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Service } from 'src/app/model/modelAll';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialog } from '@angular/material/dialog';
+// import { MatSnackBar } from '@angular/material/snack-bar';
 import { ServiceApiService } from 'src/app/service/service-api/service-api.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 @Component({
   selector: 'app-update-service',
   templateUrl: './update-service.component.html',
@@ -14,6 +15,8 @@ export class UpdateServiceComponent {
 
   service_to_update  !: Service;
 
+  
+  
 
   constructor(@Inject(MAT_DIALOG_DATA) public data: any,private apiService :ServiceApiService,private snak_Bar:MatSnackBar ){
     // console.log(data)
