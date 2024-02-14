@@ -19,33 +19,33 @@
                 <!-- End Breadcrumb -->
 
                 <div class="mb-3 mb-md-4 d-flex justify-content-between">
-                    <div class="h3 mb-0">Create New Service</div>
+                    <div class="h3 mb-0">Update Service</div>
                 </div>
 
 
                 <!-- Form -->
                 <div>
-                    <form #forme="ngForm" (ngSubmit)="createService(forme)">
+                    <form #forme="ngForm" (ngSubmit)="UpdateService(forme)">
                         <div class="form-row">
                             <div class="form-group col-12 col-md-6">
                                 <label for="name">Name</label>
-                                <input type="text" class="form-control" value="" id="name" name="name" placeholder="Service Name" ngModel required #name="ngModel">
+                                <input type="text" class="form-control" [(ngModel)]="service_to_update.name" id="name" name="name" placeholder="Service Name" ngModel required #name="ngModel">
                             </div>
                             <div class="form-group col-12 col-md-6">
                                 <label for="name">Price</label>
-                                <input type="text" class="form-control" value="" id="name" placeholder="Price" name="price" ngModel required #price="ngModel">
+                                <input type="text" class="form-control" [(ngModel)]="service_to_update.price" id="name" placeholder="Price" name="price" ngModel required #price="ngModel">
                             </div>
                             <div class="form-group col-12 col-md-6">
                                 <label for="email">Delay in hours</label>
-                                <input type="text" class="form-control" value="" id="delay" name="delay" placeholder="Delay" ngModel required #delay="ngModel">
+                                <input type="text" class="form-control" [(ngModel)]="service_to_update.delay" id="delay" name="delay" placeholder="Delay" ngModel required #delay="ngModel">
                             </div>
                             <div class="form-group col-12 col-md-6">
                                 <label for="email">commission</label>
-                                <input type="text" class="form-control" value="" id="commission" name="commission" placeholder="commission" ngModel required #commission="ngModel">
+                                <input type="text" class="form-control" [(ngModel)]="service_to_update.commission" id="commission" name="commission" placeholder="commission" ngModel required #commission="ngModel">
                             </div>
                             <div class="col-md-12">
                                 <div class="form-group">
-                                  <textarea name="description" id="" cols="30" rows="7" class="form-control" placeholder="description" ngModel required #description="ngModel"></textarea>
+                                  <textarea name="description" id="" cols="30" rows="7" class="form-control" placeholder="description" [(ngModel)]="service_to_update.description" ngModel required #description="ngModel"></textarea>
                                 </div>
                              </div>
                         </div>
@@ -104,6 +104,7 @@
     </footer>
     <!-- End Footer -->
 </div>
+
 
 
 

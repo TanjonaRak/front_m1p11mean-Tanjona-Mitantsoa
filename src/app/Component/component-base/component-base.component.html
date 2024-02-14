@@ -178,10 +178,11 @@
                 <!-- Users: subUsers -->
                 <ul id="subUsers" class="side-nav-menu side-nav-menu-second-level mb-0">
                     <li class="side-nav-menu-item">
-                        <a class="side-nav-menu-link" routerLink="/all-user">All Users</a>
+                        <!-- routerLink="/all-user" -->
+                        <a class="side-nav-menu-link" routerLink="/manager/all-user" >All Users</a>
                     </li>
                     <li class="side-nav-menu-item">
-                        <a class="side-nav-menu-link" routerLink="/new-employee" >Add new</a>
+                        <a class="side-nav-menu-link" routerLink="/manager/new-employee" >Add new</a>
                     </li>
                 </ul>
                 <!-- End Users: subUsers -->
@@ -204,10 +205,12 @@
                 <!-- Users: subUsers -->
                 <ul id="subService" class="side-nav-menu side-nav-menu-second-level mb-0">
                     <li class="side-nav-menu-item">
-                        <a class="side-nav-menu-link" routerLink="/all-user">All Service</a>
+                        <!-- <a class="side-nav-menu-link" (click)="getComponent(all-service)" routerLink="/all-service">All Service</a>-->
+                     <a class="side-nav-menu-link" routerLink="/manager/all-service">All Service</a> 
+                    
                     </li>
                     <li class="side-nav-menu-item">
-                        <a class="side-nav-menu-link" routerLink="/new-service">Add new</a>
+                        <a class="side-nav-menu-link" routerLink="/manager/new-service">Add new</a>
                     </li>
                 </ul>
                 <!-- End Users: subUsers -->

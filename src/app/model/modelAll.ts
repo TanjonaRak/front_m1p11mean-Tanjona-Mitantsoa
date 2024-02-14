@@ -14,13 +14,15 @@ export interface Client{
 
 
 export interface Service{
-    _id : string,
+    _id ?: string,
     name :string,
     delay :string,
     price : number,
     commission : number,
     photo ?: string,
-    desc?:string
+    description?:string,
+    state ?:number ,
+    date_create ?:String
 }
 
 

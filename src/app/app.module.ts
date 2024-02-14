@@ -15,6 +15,7 @@ import { AddEmployeeComponent } from './Employee/add-employee/add-employee.compo
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MyModalComponent } from './my-modal/my-modal.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { HeaderMenuComponent } from './Component/header-menu/header-menu.component';
 import { FooterComponent } from './Component/footer/footer.component';
 import { ServicesListComponent } from './Front-Office/services-list/services-list.component';
@@ -32,8 +33,14 @@ import { HomeEmployeeComponent } from './Employee/home-employee/home-employee.co
 import { ComponentListUserComponent } from './Back-office/component-list-user/component-list-user.component';
 import { NewEmployeeComponent } from './Back-office/new-employee/new-employee.component';
 import { AddNewServiceComponent } from './Back-office/add-new-service/add-new-service.component';
-import { AddNewServicePageComponent } from './Back-office/add-new-service-page/add-new-service-page.component'
+import { AddNewServicePageComponent } from './Back-office/add-new-service-page/add-new-service-page.component';
+import { AllServiceComponent } from './Back-office/AllService/all-service/all-service.component';
+import { AllServicePageComponent } from './Back-office/AllService/all-service-page/all-service-page.component'
 // import { TieredMenuModule } from 'primeng/tieredmenu';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { ModalGenerateComponent } from './Component/modal-generate/modal-generate.component';
+import { UpdateServiceComponent } from './Back-office/update-service/update-service.component';
 
 
 
@@ -64,7 +71,11 @@ import { AddNewServicePageComponent } from './Back-office/add-new-service-page/a
     ComponentListUserComponent,
     NewEmployeeComponent,
     AddNewServiceComponent,
-    AddNewServicePageComponent
+    AddNewServicePageComponent,
+    AllServiceComponent,
+    AllServicePageComponent,
+    ModalGenerateComponent,
+    UpdateServiceComponent
   ],
   imports: [
     BrowserModule,  
@@ -72,6 +83,9 @@ import { AddNewServicePageComponent } from './Back-office/add-new-service-page/a
     FormsModule,
     MatDialogModule,
     // TieredMenuModule,
+    MatIconModule,
+    MatButtonModule ,
+    MatSnackBarModule,
     HttpClientModule,
     RouterModule.forRoot([
         {
@@ -118,6 +132,18 @@ import { AddNewServicePageComponent } from './Back-office/add-new-service-page/a
         },{
           path :"new-service",
           component:AddNewServicePageComponent
+        },
+        {
+          path :"all-service",
+          component:AllServicePageComponent
+        },
+        {
+          path :"manager/:url",
+          component:ComponentBaseComponent
+        },
+        {
+          path :"employee/:url",
+          component:ComponentBaseEmployeeComponent
         }
     ]),
     BrowserAnimationsModule

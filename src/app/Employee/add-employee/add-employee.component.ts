@@ -55,7 +55,7 @@ export class AddEmployeeComponent {
       this.apiService.CreateEmployee(this.employee_to_add).subscribe((res:any)=>{
         console.log(res)
         if(res.status == 200){
-          this.router.navigate(["/all-user"])
+          this.router.navigate(["/manager/all-user"])
         }
       })
     }else{

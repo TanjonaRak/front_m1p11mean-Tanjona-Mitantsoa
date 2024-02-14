@@ -16,6 +16,6 @@ export class LoginBackOfficeComponent {
 
   Connect(form:NgForm){
       // this.router.navigate(["/home-manager"]);
-      window.location.href = "/home-manager"
+      window.location.href = "/manager/home-manager"
   }
 }

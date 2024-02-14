@@ -1,0 +1,103 @@
+<div class="content">
+    <div class="py-4 px-3 px-md-4">
+        <div class="card mb-3 mb-md-4">
+
+            <div class="card-body">
+                <!-- Breadcrumb -->
+                <nav class="d-none d-md-block" aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item">
+                            <a href="#">Service</a>
+                        </li>
+                        <li class="breadcrumb-item active" aria-current="page">All Service</li>
+                    </ol>
+                </nav>
+                <!-- End Breadcrumb -->
+
+                <div class="mb-3 mb-md-4 d-flex justify-content-between">
+                    <div class="h3 mb-0">service</div>
+                </div>
+
+
+                <!-- Users -->
+                <div class="table-responsive-xl">
+                    <table class="table text-nowrap mb-0">
+                        <thead>
+                            <tr>
+                                <!-- <th class="font-weight-semi-bold border-top-0 py-2">#</th> -->
+                                <th class="font-weight-semi-bold border-top-0 py-2">Name</th>
+                                <th class="font-weight-semi-bold border-top-0 py-2">Delay</th>
+                                <th class="font-weight-semi-bold border-top-0 py-2">Price</th>
+                                <th class="font-weight-semi-bold border-top-0 py-2">Commission</th>
+                                <th class="font-weight-semi-bold border-top-0 py-2">Registration Date</th>
+                                <th class="font-weight-semi-bold border-top-0 py-2">Status</th>
+                                <th class="font-weight-semi-bold border-top-0 py-2">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let service of services let index">
+                                <!-- <td class="py-3">{{index}}</td> -->
+                                <td class="align-middle py-3">
+                                    <div class="d-flex align-items-center">
+                                        <div class="position-relative mr-2">
+                                            <span
+                                                class="indicator indicator-lg indicator-bordered-reverse indicator-top-left indicator-success rounded-circle"></span>
+                                            <!--img class="avatar rounded-circle" src="#" alt="John Doe"-->
+                                            <span class="avatar-placeholder mr-md-2">J</span>
+                                        </div>
+                                        {{service.name}}
+                                    </div>
+                                </td>
+                                <td class="py-3">{{service.delay}} hours</td>
+                                <td class="py-3">{{service.price}} Ariary</td>
+                                <td class="py-3">{{service.commission*100}} %</td>
+                                <td class="py-3">
+                                    <span class="badge badge-pill badge-success">{{service.date_create}}</span>
+                                </td>
+                                <td *ngIf="service && service.state === 10">
+                                    <span class="badge badge-pill badge-success">Active</span>
+                                </td>
+                                <td *ngIf="service && service.state !== 10">
+                                    <span class="badge badge-pill badge-error">Vide</span>
+                                </td>
+                                <td class="py-3">
+                                    <div class="position-relative">
+                                        <Button mat-button (click)="openDialog(service)">
+                                            <mat-icon>edit</mat-icon>
+                                        </Button>
+                                        <a class="link-dark d-inline-block" href="#">
+                                            <i class="gd-trash icon-text"></i>
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                    
+                    <div class="card-footer d-block d-md-flex align-items-center d-print-none">
+                        <div class="d-flex mb-2 mb-md-0">Showing 1 to 8 of 24 Entries</div>
+
+                        <nav class="d-flex ml-md-auto d-print-none" aria-label="Pagination">
+                            <ul class="pagination justify-content-end font-weight-semi-bold mb-0">
+                                <li class="page-item"> <a id="datatablePaginationPrev" class="page-link" href="#!"
+                                        aria-label="Previous"><i
+                                            class="gd-angle-left icon-text icon-text-xs d-inline-block"></i></a> </li>
+                                <li *ngFor="let i of getRange(numberPage)" class="page-item d-none d-md-block"><a id="datatablePaginationPage0"
+                                        class="page-link active" (click)="paginate(i+1)" data-dt-page-to="0">{{i+1}}</a></li>
+                                
+        
+                                <li class="page-item"> <a id="datatablePaginationNext" class="page-link" href="#!"
+                                        aria-label="Next"><i
+                                            class="gd-angle-right icon-text icon-text-xs d-inline-block"></i></a> </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <!-- End Users -->
+            </div>
+        </div>
+
+
+    </div>
+</div>
