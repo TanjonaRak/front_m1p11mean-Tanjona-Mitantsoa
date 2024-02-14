@@ -28,6 +28,14 @@ export class ServiceApiService {
     } catch (error) {
       throw error;      
     }
+  }
 
+  UpdateService(service:Service){
+    try {
+      let res = this.httpClient.put(url+this.url_base,JSON.parse(JSON.stringify(service)));
+      return res;
+    } catch (error) {
+        throw error;
+    }
   }
 }
