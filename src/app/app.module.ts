@@ -39,8 +39,6 @@ import { AllServicePageComponent } from './Back-office/AllService/all-service-pa
 // import { TieredMenuModule } from 'primeng/tieredmenu';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import { ModalGenerateComponent } from './Component/modal-generate/modal-generate.component';
-import { UpdateServiceComponent } from './Back-office/update-service/update-service.component';
 
 
 
@@ -73,9 +71,7 @@ import { UpdateServiceComponent } from './Back-office/update-service/update-serv
     AddNewServiceComponent,
     AddNewServicePageComponent,
     AllServiceComponent,
-    AllServicePageComponent,
-    ModalGenerateComponent,
-    UpdateServiceComponent
+    AllServicePageComponent
   ],
   imports: [
     BrowserModule,  
