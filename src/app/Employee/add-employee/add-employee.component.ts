@@ -5,7 +5,12 @@ import { EmployeeServiceService } from 'src/app/service/employee-service.service
 import { MyModalComponent } from 'src/app/my-modal/my-modal.component';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
+
+function delay(ms:number){
+  return new Promise(resolve=>setTimeout(resolve,ms))
+}
 
 @Component({
   selector: 'app-add-employee',
@@ -17,7 +22,7 @@ export class AddEmployeeComponent {
   modalTitle = 'My Modal';
   modalContent = '<p>This is the <strong>content</strong> of my modal.</p>';
 
-  constructor (private apiService : EmployeeServiceService,public modal : MatDialog,private router:Router ){
+  constructor (private apiService : EmployeeServiceService,public modal : MatDialog,private router:Router,private snak_Bar : MatSnackBar ){
   }
 
   employee_to_add = {
@@ -31,6 +36,10 @@ export class AddEmployeeComponent {
     photo : ""
   } as Employee
 
+  confirm_password = "";
+
+  loading  = true;
+
 
   employees = [] as Employee [];
 
@@ -41,6 +50,15 @@ export class AddEmployeeComponent {
 
   ngOnInit(): void {
     // this.getEmployee();
+    this.LoaderStatic();
+  }
+
+  OpenSnackBar (message:string,action:string){
+    this.snak_Bar.open(message,action,{
+      duration:2000,
+      panelClass:['toast-success'],
+      verticalPosition:'top'
+    });
   }
 
 
@@ -51,15 +69,29 @@ export class AddEmployeeComponent {
     this.employee_to_add.login = form.value.login
     this.employee_to_add.email = form.value.email
     this.employee_to_add.password = form.value.password
+    this.confirm_password = form.value.confirm_password;
+    // console.log(this.employee_to_add.password !==this.confirm_password)
+    // if(this.employee_to_add.password !==this.confirm_password){
+    //   this.OpenSnackBar("Password different in the confirm password","Successfull")
+    //   return ;
+    // }
     if(form.valid){
-      this.apiService.CreateEmployee(this.employee_to_add).subscribe((res:any)=>{
-        console.log(res)
-        if(res.status == 200){
-          this.router.navigate(["/manager/all-user"])
-        }
-      })
-    }else{
+      if(this.employee_to_add.password ===this.confirm_password){
+        this.apiService.CreateEmployee(this.employee_to_add).subscribe((res:any)=>{
+          // console.log(res)
+          if(res.status == 200){
+            this.OpenSnackBar("Create Employee successfull","Successfull")
+            this.router.navigate(["/manager/all-user"])
+          }else{
+            this.OpenSnackBar(res.message,"Error")
+          }
+        })
+      }else{
+        this.OpenSnackBar("Password different in the confirm password","Error")
+      }
       
+    }else{
+      this.OpenSnackBar("Input is obligation","Warning")
     }
   }
 
@@ -80,6 +112,11 @@ export class AddEmployeeComponent {
 
   get(){
     console.log("GVUBKhkb")
+  }
+
+  async LoaderStatic (){
+    await delay(200);
+    this.loading = false
   }
 
 

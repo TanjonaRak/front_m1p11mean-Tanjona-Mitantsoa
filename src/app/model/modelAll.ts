@@ -32,7 +32,7 @@ export interface Employee {
     first_name :string,
     email : string,
     password :string,
-    etat :number,
+    etat ?:number,
     photo ?:string,
     service ?: Service[],
     login : string,

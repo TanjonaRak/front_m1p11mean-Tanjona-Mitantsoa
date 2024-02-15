@@ -1,6 +1,13 @@
 import { Component } from '@angular/core';
 import { Employee } from 'src/app/model/modelAll';
 import { EmployeeServiceService } from 'src/app/service/employee-service.service';
+import { MatDialog } from '@angular/material/dialog';
+import { UpdateEmployeeComponent } from 'src/app/Employee/update-employee/update-employee.component';
+import { ServiceModalService } from 'src/app/service/ServiceModal/service-modal.service';
+function delay(ms:number){
+  return new Promise(resolve=>setTimeout(resolve,ms))
+}
+
 
 @Component({
   selector: 'app-component-list-user',
@@ -15,8 +22,18 @@ export class ComponentListUserComponent {
   limit = 3;
 
   numberPage = 0;
+  loading  = true;
 
-  constructor (private apiService : EmployeeServiceService){
+  employee_to_update :Employee = {
+    _id:"",
+    name:"",
+    first_name:"",
+    email:"",
+    password:"",
+    login:""
+  }
+
+  constructor (private apiService : EmployeeServiceService,public dialog: MatDialog,private ServiceModal:ServiceModalService){
   }
 
   getRange(n:number):number[]{
@@ -26,6 +43,14 @@ export class ComponentListUserComponent {
 
   ngOnInit(): void {
     this.getEmployee();
+    this.ServiceModal.closeModal$.subscribe(()=>{
+      this.dialog.closeAll();
+      this.loading = true;
+      this.getEmployee();
+      // this.dialog.afterAllClosed();
+      this.LoaderStatic();
+    })
+    this.LoaderStatic();
   }
 
   getEmployee (){
@@ -43,4 +68,27 @@ export class ComponentListUserComponent {
     this.offset = (pageNum-1)*this.limit;
     this.getEmployee();
   }
+
+  openDialog(employee:Employee){
+
+  }
+
+  UpdateEmployee(employee:Employee){
+    this.employee_to_update._id = employee._id;
+    this.employee_to_update.name =employee.name;
+    this.employee_to_update.first_name =employee.first_name;
+    this.employee_to_update.email = employee.email;
+    this.employee_to_update.login =employee.login;
+    this.employee_to_update.password = employee.password;
+    const dialogRef = this.dialog.open(UpdateEmployeeComponent,{
+      data : {employee:this.employee_to_update}
+    });
+    // const dialogRef = this.dialog.open()
+  }
+
+  async LoaderStatic (){
+    await delay(500);
+    this.loading = false
+  }
+
 }

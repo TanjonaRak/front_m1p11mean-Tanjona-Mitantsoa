@@ -41,6 +41,11 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { ModalGenerateComponent } from './Component/modal-generate/modal-generate.component';
 import { UpdateServiceComponent } from './Back-office/update-service/update-service.component';
+import { UpdateEmployeeComponent } from './Employee/update-employee/update-employee.component';
+// import { UpdateUserComponent } from './Back-office/update-user/update-user.component';
+// import { UpdateEmployeeComponent } from './Back-office/Employee/update-employee/update-employee.component';
+// import {MatSpi}
+
 
 
 
@@ -75,7 +80,10 @@ import { UpdateServiceComponent } from './Back-office/update-service/update-serv
     AllServiceComponent,
     AllServicePageComponent,
     ModalGenerateComponent,
-    UpdateServiceComponent
+    UpdateServiceComponent,
+    UpdateEmployeeComponent,
+    // UpdateUserComponent,
+    // UpdateEmployeeComponent
   ],
   imports: [
     BrowserModule,  

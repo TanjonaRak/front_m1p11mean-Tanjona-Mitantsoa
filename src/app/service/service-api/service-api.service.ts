@@ -15,6 +15,8 @@ export class ServiceApiService {
   CreateService(service_to_add : Service){
     try {
       let res = this.httpClient.post(url+this.url_base,JSON.parse(JSON.stringify(service_to_add)));
+      // res.subscribe();
+      // res.pipe();
       return res;
     } catch (error) {
       throw error;
@@ -32,7 +34,7 @@ export class ServiceApiService {
 
   UpdateService(service:Service){
     try {
-      let res = this.httpClient.put(url+this.url_base,JSON.parse(JSON.stringify(service)));
+      let res = this.httpClient.put(url+this.url_base,service);
       return res;
     } catch (error) {
         throw error;
