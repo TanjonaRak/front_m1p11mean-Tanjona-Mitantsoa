@@ -69,9 +69,27 @@
                                     name="confirm_password" placeholder="Confirm Password" ngModel required #confirm_password="ngModel">
                             </div>
                             <div class="form-group col-12 col-md-6">
+                                <label for="name">time_between</label>
+                                <input type="time" class="form-control"  value="" id="time_between" name="time_between"
+                                    placeholder="Time between" ngModel required #time_between="ngModel">
+                            </div>
+                            <div class="form-group col-12 col-md-6">
+                                <label for="name">end_time</label>
+                                <input type="time" class="form-control" value="" id="end_time" name="end_time"
+                                    placeholder="Time end" ngModel required #end_time="ngModel">
+                            </div>
+                            <div class="form-group col-12 col-md-6">
                                 <label for="name">Image</label>
-                                <input type="file" class="form-control" (change)="changeImage($event)" value="" id="name" name="name"
-                                    placeholder="User Name" ngModel required #name="ngModel">
+                                <input type="file" class="form-control" (change)="changeImage($event)" 
+                                    placeholder="User Name" >
+                            </div>
+                            <div class="form-group col-12 col-md-6">
+                                <label for="name">Service</label>
+                                <!-- <input type="file" class="form-control" (change)="changeImage($event)" value="" id="name" name="name"
+                                    placeholder="User Name" ngModel required #name="ngModel"> -->
+                                    <select class="form-control" id="service" name="service" ngModel required #service="ngModel" >
+                                        <option *ngFor="let service of services" value='{_id:{{service._id}},name:{{service.name}},price:{{service.price}},commission:{{service.commission}},delay:{{service.delay}}}'>{{service.name}}</option>
+                                    </select>
                             </div>
                         </div>
                         <div class="custom-control custom-switch mb-2">

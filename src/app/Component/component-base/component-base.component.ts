@@ -45,6 +45,8 @@ export class ComponentBaseComponent {
         this.createDynamicComponent(AddEmployeeComponent);
       }if(this.showComponent === "all-user"){
         this.createDynamicComponent(ComponentListUserComponent);
+      }if(this.showComponent ==="expenses"){
+        this.createDynamicComponent(AddEmployeeComponent);
       }
     // }
   }

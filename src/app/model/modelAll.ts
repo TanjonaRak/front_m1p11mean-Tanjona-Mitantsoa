@@ -22,7 +22,8 @@ export interface Service {
     photo?: string,
     description?: string,
     state?: number,
-    date_create?: String
+    date_create?: String,
+    _idpreference?:string
 }
 
 
@@ -118,6 +119,12 @@ export interface preferenceEmployee{
     _id?: string,
     customer: Customers,
     employee: Employee,
+}
+
+export interface preferenceService{
+    _id?: string,
+    customer: Customers,
+    service: Service,
 }
 
 export interface task {

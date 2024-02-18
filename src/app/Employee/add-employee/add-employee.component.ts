@@ -6,6 +6,7 @@ import { MyModalComponent } from 'src/app/my-modal/my-modal.component';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { ServiceApiService } from 'src/app/service/service-api/service-api.service';
 
 
 function delay(ms:number){
@@ -22,7 +23,7 @@ export class AddEmployeeComponent {
   modalTitle = 'My Modal';
   modalContent = '<p>This is the <strong>content</strong> of my modal.</p>';
 
-  constructor (private apiService : EmployeeServiceService,public modal : MatDialog,private router:Router,private snak_Bar : MatSnackBar ){
+  constructor (private apiService : EmployeeServiceService,public modal : MatDialog,private router:Router,private snak_Bar : MatSnackBar,private apiService_service:ServiceApiService ){
   }
 
   employee_to_add = {
@@ -33,7 +34,9 @@ export class AddEmployeeComponent {
     password : "",
     service : [],
     etat : 10,
-    photo : ""
+    photo : "",
+    time_between:"",
+    end_time:""
   } as Employee
 
   confirm_password = "";
@@ -43,6 +46,7 @@ export class AddEmployeeComponent {
 
 
   employees = [] as Employee [];
+  services = [] as Service[];
 
   service = [
     {_id:"1",name:"Makup",delay:"30 min",price:20000,commission:0.2,photo:""},
@@ -52,6 +56,17 @@ export class AddEmployeeComponent {
   ngOnInit(): void {
     // this.getEmployee();
     this.LoaderStatic();
+    this.getServiceWithEmployee();
+  }
+
+  getServiceWithEmployee(){
+    this.apiService_service.getServices(0,100).subscribe((res:any)=>{
+      if(res.status === 200){
+        this.services = res.data;
+      }else{
+        console.log("Error");
+      }
+    });
   }
 
   OpenSnackBar (message:string,action:string){
@@ -65,12 +80,17 @@ export class AddEmployeeComponent {
 
   createEmployee(form:NgForm) {
     // console.log("vdfvfgeg")
+    console.log(form.value.service)
     this.employee_to_add.name = form.value.name
     this.employee_to_add.first_name = form.value.first_name
     this.employee_to_add.login = form.value.login
     this.employee_to_add.email = form.value.email
     this.employee_to_add.password = form.value.password
     this.confirm_password = form.value.confirm_password;
+    this.employee_to_add.time_between = form.value.time_between;
+    this.employee_to_add.end_time = form.value.end_time;
+    this.employee_to_add.service = [form.value.service as Service];
+    // console.log(this.employee_to_add)
     // console.log(this.employee_to_add.password !==this.confirm_password)
     // if(this.employee_to_add.password !==this.confirm_password){
     //   this.OpenSnackBar("Password different in the confirm password","Successfull")

@@ -44,13 +44,21 @@
                             </div>
                         </div>
                         <div class="form-row">
-                            <div class="form-group col-12 col-md-6">
+                            <!-- <div class="form-group col-12 col-md-6">
                                 <label for="password">Password</label>
                                 <input type="password" class="form-control" [(ngModel)]="employee_to_update.password" id="password" name="password" placeholder="New Password"  ngModel required #password="ngModel">
                             </div>
                             <div class="form-group col-12 col-md-6">
                                 <label for="password_confirm">Confirm Password</label>
                                 <input type="password" class="form-control" [(ngModel)]="employee_to_update.password" id="password_confirm" name="password_confirm" placeholder="Confirm Password">
+                            </div> -->
+                            <div class="form-group col-12 col-md-6">
+                                <label for="password">Time between</label>
+                                <input type="time" class="form-control" [(ngModel)]="employee_to_update.time_between" id="time_between" name="time_between" placeholder="time_between"  ngModel required #time_between="ngModel">
+                            </div>
+                            <div class="form-group col-12 col-md-6">
+                                <label for="password_confirm">Time End</label>
+                                <input type="time" class="form-control" [(ngModel)]="employee_to_update.end_time" id="end_time" name="end_time" placeholder="end_time">
                             </div>
                         </div>
                         <div class="custom-control custom-switch mb-2">

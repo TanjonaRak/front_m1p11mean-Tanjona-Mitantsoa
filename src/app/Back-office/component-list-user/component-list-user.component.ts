@@ -80,6 +80,8 @@ export class ComponentListUserComponent {
     this.employee_to_update.email = employee.email;
     this.employee_to_update.login =employee.login;
     this.employee_to_update.password = employee.password;
+    this.employee_to_update.time_between = employee.time_between;
+    this.employee_to_update.end_time = employee.end_time;
     const dialogRef = this.dialog.open(UpdateEmployeeComponent,{
       data : {employee:this.employee_to_update}
     });

@@ -17,7 +17,16 @@
             <div class="media-body">
               <h3 class="heading mb-3">{{service.name}}</h3>
               <p>{{service.description}}</p>
-              <p><input type="checkbox"></p>
+              <div *ngIf="userConnect">
+              <p *ngIf="service.state===0">
+                <input  type="checkbox" (change)="CheckPreference(10,service)">
+                <!-- <span>❤️</span> -->
+              </p>
+              <p *ngIf="service.state===10">
+                <input checked type="checkbox" (change)="CheckPreference(0,service)">
+                <span ></span>
+              </p>
+            </div>
             </div>
           </div>    
         </div>

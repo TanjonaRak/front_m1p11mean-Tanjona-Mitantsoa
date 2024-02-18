@@ -24,13 +24,13 @@
 
     ==> Tanjona : 
         Client :
-            =>Gestion preference (CRUD preference => service , employee, {service,employee}) (task 5)
+           # =>Gestion preference (CRUD preference => service , employee, {service,employee}) (task 5)
             =>Notification offres spéciales(task 3 )
         Employe : 
-            =>Gestion profil et horaire de travail (task 2) 
+           # =>Gestion profil et horaire de travail (task 2) 
             =>Suivie tache (task 6)
         Manager : 
-           # =>Gestion personnel (task 1 )(CRUD)
+           # =>Gestion personnel (task 1 )(CRUD)(drag and drop congé employé)
            # =>Gestion des services(CRUD service => nom,prix ,delay , commission) (task 2)
             =>Statistique :
                 =>Temps moyen de travail pour chaque employé (task 7)
