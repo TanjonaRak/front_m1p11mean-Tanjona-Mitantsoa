@@ -1,0 +1,92 @@
+
+
+
+
+<div class="content">
+    <div class="div-image" *ngIf="imageEmployee">
+        <img [src]="imageEmployee" alt="profil ">
+    </div>
+    <div class="div-image" *ngIf="!imageEmployee">
+        <img src="../../../assets/images/favicon.png" alt="profil ">
+    </div>
+    <div class="py-4 px-3 px-md-4">
+        <div class="card mb-3 mb-md-4">
+
+            <div class="card-body">
+                <!-- Breadcrumb -->
+                <nav class="d-none d-md-block" aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item">
+                            <a href="#">Users</a>
+                        </li>
+                        <li class="breadcrumb-item active" aria-current="page">Profil</li>
+                    </ol>
+                </nav>
+                <!-- End Breadcrumb -->
+
+                <div class="mb-3 mb-md-4 d-flex justify-content-between">
+                    <div class="h3 mb-0">Profil</div>
+                </div>
+
+
+                <!-- Form -->
+                <div>
+                    <form #forme="ngForm" (ngSubmit)="UpdateProfil(forme)">
+                        <div class="form-row">
+                            <div class="form-group col-12 col-md-6">
+                                <label for="name">Name</label>
+                                <input type="text" class="form-control" [(ngModel)]="employee_to_update.name" id="name" name="name" placeholder="User Name" ngModel required #name="ngModel">
+                            </div>
+                            <div class="form-group col-12 col-md-6">
+                                <label for="name">First Name</label>
+                                <input type="text" class="form-control" [(ngModel)]="employee_to_update.first_name" id="name" placeholder="User Name" name="first_name" ngModel required #first_name="ngModel">
+                            </div>
+                            <div class="form-group col-12 col-md-6">
+                                <label for="email">Email</label>
+                                <input type="email" class="form-control" [(ngModel)]="employee_to_update.email" id="email" name="email" placeholder="User Email" ngModel required #email="ngModel">
+                            </div>
+                            <div class="form-group col-12 col-md-6">
+                                <label for="email">Login</label>
+                                <input type="text" class="form-control" [(ngModel)]="employee_to_update.login" id="email" name="login" placeholder="Login" ngModel required #login="ngModel">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-12 col-md-6">
+                                <label for="password">Hours start</label>
+                                <input type="time" class="form-control" [(ngModel)]="employee_to_update.time_between"  id="time_between" name="time_between" placeholder="time_between"  ngModel required #time_between="ngModel">
+                            </div>
+                            <div class="form-group col-12 col-md-6">
+                                <label for="password_confirm">Hours end</label>
+                                <input type="time" class="form-control" [(ngModel)]="employee_to_update.end_time" id="end_time" name="end_time" ngModel required #end_time="ngModel">
+                            </div> 
+                        </div>
+                        <div class="custom-control custom-switch mb-2">
+                            <input type="checkbox" class="custom-control-input" id="randomPassword">
+                            <label class="custom-control-label" for="randomPassword">Set Random Password</label>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary float-right">Create</button>
+                        <button [mat-dialog-close]="true" class="btn btn-primary float-left">Cancel</button>
+                    </form>
+                </div>
+                <!-- End Form -->
+            </div>
+        </div>
+
+
+    </div>
+    <div *ngIf="loading===true" id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px"
+        height="48px">
+        <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+        <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
+            stroke="#F96D00" />
+    </svg></div>
+    <!-- Footer -->
+    <!-- End Footer -->
+</div>
+
+
+
+
+
+

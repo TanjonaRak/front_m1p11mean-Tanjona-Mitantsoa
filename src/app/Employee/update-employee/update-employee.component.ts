@@ -17,8 +17,10 @@ export class UpdateEmployeeComponent {
 
   constructor(@Inject(MAT_DIALOG_DATA) public data: any,private snak_Bar : MatSnackBar,private apiService :EmployeeServiceService,private closeModal:ServiceModalService){
     // console.log(data)
-    this.employee_to_update = data.employee ;
-    
+    // console.log("qsdfqsdf")
+    // if(data!==null){
+      this.employee_to_update = data.employee ;
+    // }
     // console.log(this.service_to_update)
   }
 
@@ -28,6 +30,10 @@ export class UpdateEmployeeComponent {
       panelClass:['toast-success'],
       verticalPosition:'top'
     });
+  }
+
+  ngOnInit(){
+
   }
 
 

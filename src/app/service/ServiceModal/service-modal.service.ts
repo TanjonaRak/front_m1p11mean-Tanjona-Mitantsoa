@@ -8,6 +8,8 @@ export class ServiceModalService {
 
   constructor() { }
 
+  
+
   private closeModal = new Subject<void>();
 
   closeModal$ = this.closeModal.asObservable();

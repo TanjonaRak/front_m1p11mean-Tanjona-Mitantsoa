@@ -1,3 +1,4 @@
+@import '~swiper/swiper-bundle.css';
 
 
 .div-image{
@@ -16,3 +17,4 @@
     height: auto;
     display: block;
 }
+

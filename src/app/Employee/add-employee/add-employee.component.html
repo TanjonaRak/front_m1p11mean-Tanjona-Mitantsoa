@@ -1,10 +1,15 @@
 <div class="content">
+    <div class="div-image" *ngIf="imageEmployee">
+        <img [src]="imageEmployee" alt="profil ">
+    </div>
+    <div class="div-image" *ngIf="!imageEmployee">
+        <img src="../../../assets/images/favicon.png" alt="profil ">
+    </div>
     <div class="py-4 px-3 px-md-4">
         <div class="card mb-3 mb-md-4">
-
             <div class="card-body">
                 <!-- Breadcrumb -->
-                <nav class="d-none d-md-block" aria-label="breadcrumb">
+                <!-- <nav class="d-none d-md-block" aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item">
                             <a href="#">Users</a>
@@ -12,18 +17,20 @@
                         <li class="breadcrumb-item active" aria-current="page">Create New Employee</li>
                     </ol>
                 </nav>
+                 -->
                 <!-- End Breadcrumb -->
 
-                <div class="mb-3 mb-md-4 d-flex justify-content-between">
+                <!-- <div class="mb-3 mb-md-4 d-flex justify-content-between">
                     <div class="h3 mb-0">Create New Employee</div>
-                </div>
-
-
-
+                </div> -->
+               
+               
+            
                 <!-- Form -->
                 <div>
                     <form #forme="ngForm" (ngSubmit)="createEmployee(forme)">
                         <div class="form-row">
+                           
                             <div class="form-group col-12 col-md-6">
                                 <label for="name">Name</label>
                                 <input type="text" class="form-control" value="" id="name" name="name"
@@ -44,6 +51,11 @@
                                 <input type="email" class="form-control" value="" id="email" name="login"
                                     placeholder="Login" ngModel required #login="ngModel">
                             </div>
+                            <!-- <div class="form-group col-12 col-md-6">
+                                <label for="password">Password</label>
+                                <input type="password" class="form-control" value="" id="password" name="password"
+                                    placeholder="New Password" ngModel required #password="ngModel">
+                            </div> -->
                         </div>
                         <div class="form-row">
                             <div class="form-group col-12 col-md-6">
@@ -55,6 +67,11 @@
                                 <label for="password_confirm">Confirm Password</label>
                                 <input type="password" class="form-control" value="" id="password_confirm"
                                     name="confirm_password" placeholder="Confirm Password" ngModel required #confirm_password="ngModel">
+                            </div>
+                            <div class="form-group col-12 col-md-6">
+                                <label for="name">Image</label>
+                                <input type="file" class="form-control" (change)="changeImage($event)" value="" id="name" name="name"
+                                    placeholder="User Name" ngModel required #name="ngModel">
                             </div>
                         </div>
                         <div class="custom-control custom-switch mb-2">

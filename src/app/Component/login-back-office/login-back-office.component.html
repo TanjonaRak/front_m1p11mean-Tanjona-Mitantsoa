@@ -1,52 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
- 
-<!-- <app-header-menu></app-header-menu> -->
-  <body>
-   
-    <!-- END nav -->
+  <head>
+    <!-- Title -->
+    <title>Login | Graindashboard UI Kit</title>
 
-       <section class="ftco-section ftco-booking bg-light">
-         <div class="container ftco-relative">
-            <div class="row justify-content-center pb-3">
-            <div class="col-md-10 heading-section text-center ftco-booking">
-               <span class="subheading">Login Admin</span>
-              <h2 class="mb-4">Login </h2>
-            </div>
-          </div>
-          <h3 class="vr">Call Us: 012-3456-7890</h3>
-            <div class="row justify-content-center">
-               <div class="col-md-4 ftco-booking">
-                  <form #forme="ngForm" (ngSubmit)="Connect(forme)" class="appointment-form">
-                 <div class="row">
-                   <div class="col-sm-12">
-                     <div class="form-group">
-                         <input type="text" class="form-control" id="appointment_name" placeholder="Email or phone number">
-                       </div>
-                   </div>
-                   <div class="col-sm-12">
-                     <div class="form-group">
-                       <input type="password" class="form-control" id="phone" placeholder="password">
-                     </div>
-                   </div>
-                  </div>
-                  <div class="col-sm-12">
-                    <div class="form-group">
-                   <input type="submit" value="Login" class="btn btn-primary">
-                </div>
-                 </div>
-                 
-               </form>
-               </div>
-            </div>
-         </div>
-      </section>
-		
-   <app-footer></app-footer>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-  <!-- loader -->
-  <!-- <div *ngIf="loading===true" id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div> -->
-    
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="assets/img/logo-mini.png">
+
+    <!-- Template -->
+    <!-- <link rel="stylesheet" href="public/graindashboard/css/graindashboard.css"> -->
+  </head>
+
+  <body class="">
+
+    <main class="main">
+
+      <div class="content">
+
+			<div class="container-fluid pb-5">
+
+				<div class="row justify-content-md-center">
+					<div class="card-wrapper col-12 col-md-4 mt-5">
+						<div class="brand text-center mb-3">
+							<a href="/"><img src="assets/img/logo.png"></a>
+						</div>
+						<div class="card">
+							<div class="card-body">
+								<h4 class="card-title">Login</h4>
+								<form #forme="ngForm" (ngSubmit)="Connect(forme)">
+									<div class="form-group">
+										<label for="email">E-Mail Address</label>
+										<input id="email" type="email" class="form-control" name="email" required="" autofocus="">
+									</div>
+
+									<div class="form-group">
+										<label for="password">Password
+										</label>
+										<input id="password" type="password" class="form-control" name="password" required="">
+										<div class="text-right">
+											<a href="password-reset.html" class="small">
+												Forgot Your Password?
+											</a>
+										</div>
+									</div>
+
+									<div class="form-group">
+										<div class="form-check position-relative mb-2">
+										  <input type="checkbox" class="form-check-input d-none" id="remember" name="remember">
+										  <!-- <label class="checkbox checkbox-xxs form-check-label ml-1" for="remember" -->
+												 <!-- data-icon="&#xe936">Remember Me</label> -->
+										</div>
+									</div>
+
+									<div class="form-group no-margin">
+	
+                    <button class="btn btn-primary btn-block">Sign In</button>
+									</div>
+									<div class="text-center mt-3 small">
+										Don't have an account? <a href="register.html">Sign Up</a>
+									</div>
+								</form>
+							</div>
+						</div>
+						<footer class="footer mt-3">
+							<div class="container-fluid">
+								<div class="footer-content text-center small">
+									<span class="text-muted">&copy; 2019 Graindashboard. All Rights Reserved.</span>
+								</div>
+							</div>
+						</footer>
+					</div>
+				</div>
+
+
+
+			</div>
+
+      </div>
+    </main>
+<!-- 
+	<script src="public/graindashboard/js/graindashboard.js"></script>
+    <script src="public/graindashboard/js/graindashboard.vendor.js"></script> -->
   </body>
 </html>
-

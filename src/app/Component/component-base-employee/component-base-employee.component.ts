@@ -2,6 +2,9 @@ import { Component, Input, ViewChild, ViewContainerRef, ComponentFactoryResolver
 import { AllServiceComponent } from 'src/app/Back-office/AllService/all-service/all-service.component';
 import { ActivatedRoute } from '@angular/router';
 import { TableComponent } from '../table/table.component';
+import { UpdateEmployeeComponent } from 'src/app/Employee/update-employee/update-employee.component';
+import { ProfilEmployeeComponent } from 'src/app/Employee/Profil/profil-employee/profil-employee.component';
+import { Employee } from 'src/app/model/modelAll';
 
 @Component({
   selector: 'app-component-base-employee',
@@ -16,7 +19,15 @@ export class ComponentBaseEmployeeComponent {
   constructor(private resolver: ComponentFactoryResolver,private route: ActivatedRoute) {}
   showComponent : string|null ="home-manager";
 
+  user_connected !: Employee;
+
   ngOnInit(): void {
+
+    const user_local = localStorage.getItem('user');
+    if(user_local){
+      const user = JSON.parse(user_local) as Employee;
+      this.user_connected = user;
+    }
     this.route.paramMap.subscribe(params => {
       this.showComponent = params.get('url');
       console.log('URL récupérée :', this.showComponent);
@@ -36,6 +47,8 @@ export class ComponentBaseEmployeeComponent {
       }
       if(this.showComponent ==="home-employee" || this.showComponent ==="list-appointment"){
         this.createDynamicComponent(TableComponent);
+      }if(this.showComponent ==="profil"){
+          this.createDynamicComponent(ProfilEmployeeComponent);
       }
     // }
   }

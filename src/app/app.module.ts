@@ -42,6 +42,10 @@ import { MatIconModule } from '@angular/material/icon';
 import { ModalGenerateComponent } from './Component/modal-generate/modal-generate.component';
 import { UpdateServiceComponent } from './Back-office/update-service/update-service.component';
 import { UpdateEmployeeComponent } from './Employee/update-employee/update-employee.component';
+import { ProfilEmployeeComponent } from './Employee/Profil/profil-employee/profil-employee.component';
+import { PreferenceComponent } from './Front-Office/Preference/preference/preference.component';
+import { EmployeeListComponent } from './Front-Office/Preference/employee-list/employee-list.component';
+
 // import { UpdateUserComponent } from './Back-office/update-user/update-user.component';
 // import { UpdateEmployeeComponent } from './Back-office/Employee/update-employee/update-employee.component';
 // import {MatSpi}
@@ -82,6 +86,9 @@ import { UpdateEmployeeComponent } from './Employee/update-employee/update-emplo
     ModalGenerateComponent,
     UpdateServiceComponent,
     UpdateEmployeeComponent,
+    ProfilEmployeeComponent,
+    PreferenceComponent,
+    EmployeeListComponent,
     // UpdateUserComponent,
     // UpdateEmployeeComponent
   ],
@@ -152,6 +159,9 @@ import { UpdateEmployeeComponent } from './Employee/update-employee/update-emplo
         {
           path :"employee/:url",
           component:ComponentBaseEmployeeComponent
+        },{
+          path:'preference',
+          component:PreferenceComponent
         }
     ]),
     BrowserAnimationsModule

@@ -41,4 +41,13 @@ export class EmployeeServiceService {
     }
   }
 
+  getEmployeeById(id?:string){
+    try {
+      let profilEmployee = this.httpClient.get(url+this.url_base+"/"+id); 
+      return profilEmployee;
+    } catch (error) {
+      throw error;
+    }
+  }
+
 }

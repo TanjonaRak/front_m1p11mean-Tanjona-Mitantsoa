@@ -39,6 +39,7 @@ export class AddEmployeeComponent {
   confirm_password = "";
 
   loading  = true;
+  imageEmployee !:string|ArrayBuffer|null;
 
 
   employees = [] as Employee [];
@@ -117,6 +118,19 @@ export class AddEmployeeComponent {
   async LoaderStatic (){
     await delay(200);
     this.loading = false
+  }
+
+  
+
+  changeImage(event:any){
+    // console.log(event.target.files)
+    let file : File=event.target.files[0]
+    let reader = new FileReader();
+    reader.onload=()=>{
+      this.imageEmployee= reader.result
+      this.employee_to_add.picture = reader.result as string
+    }
+    reader.readAsDataURL(file);
   }
 
 
