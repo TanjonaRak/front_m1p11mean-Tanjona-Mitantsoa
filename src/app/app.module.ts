@@ -45,6 +45,8 @@ import { UpdateEmployeeComponent } from './Employee/update-employee/update-emplo
 import { ProfilEmployeeComponent } from './Employee/Profil/profil-employee/profil-employee.component';
 import { PreferenceComponent } from './Front-Office/Preference/preference/preference.component';
 import { EmployeeListComponent } from './Front-Office/Preference/employee-list/employee-list.component';
+import { AppointmentComponent } from './Front-Office/appointment/appointment.component';
+import { CustomerRegisterComponent } from './Back-office/customer-register/customer-register.component';
 
 // import { UpdateUserComponent } from './Back-office/update-user/update-user.component';
 // import { UpdateEmployeeComponent } from './Back-office/Employee/update-employee/update-employee.component';
@@ -89,6 +91,8 @@ import { EmployeeListComponent } from './Front-Office/Preference/employee-list/e
     ProfilEmployeeComponent,
     PreferenceComponent,
     EmployeeListComponent,
+    AppointmentComponent,
+    CustomerRegisterComponent,
     // UpdateUserComponent,
     // UpdateEmployeeComponent
   ],
@@ -162,6 +166,12 @@ import { EmployeeListComponent } from './Front-Office/Preference/employee-list/e
         },{
           path:'preference',
           component:PreferenceComponent
+        },{
+          path : 'appointment',
+          component:AppointmentComponent
+        },{
+          path : 'Register',
+          component:CustomerRegisterComponent
         }
     ]),
     BrowserAnimationsModule

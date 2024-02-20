@@ -1,6 +1,6 @@
-import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
-import url from 'src/app/config/config';
+  import { HttpClient } from '@angular/common/http';
+  import { Injectable } from '@angular/core';
+  import url from 'src/app/config/config';
 import { Customers, preference, preferenceEmployee } from 'src/app/model/modelAll';
 
 @Injectable({
