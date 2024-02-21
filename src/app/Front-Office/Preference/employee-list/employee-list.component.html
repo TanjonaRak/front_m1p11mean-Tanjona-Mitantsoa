@@ -1,49 +1,73 @@
+<section class="services-section ftco-section">
+  <div class="container">
 
-  <section class="services-section ftco-section">
-    <div class="container">
-
-       <div class="row justify-content-center pb-3">
-        <div class="col-md-10 heading-section text-center ftco-booking">
-           <span class="subheading">Employee</span>
-          <h2 class="mb-4">List of Employee with swiper</h2>
-          <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
-        </div>
+    <div class="row justify-content-center pb-3">
+      <div class="col-md-10 heading-section text-center ftco-booking">
+        <span class="subheading">Employee</span>
+        <h2 class="mb-4">List of Employee with swiper</h2>
+        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
       </div>
-
-      <!-- <div  class="row no-gutters d-flex"> -->
-        <div #swiperContainer class="swiper-container">
-            <div class="swiper-wrapper">
-              <!-- Aquí van tus diapositivas -->
-              <div *ngFor ="let employee of employees" class="swiper-slide">
-                <div class="media block-6 services d-block text-center">
-                    <div class="div-image">
-                        <img [src]="employee.picture" alt="profil ">
-                    </div>
-                    <!-- <div class="icon"><span class="flaticon-beard"></span></div> -->
-                    <div class="media-body">
-                      <h3 class="heading mb-3">{{employee.name}}</h3>
-                      <p>{{employee.first_name}}</p>
-                      
-                      <p *ngIf="employee.state===0">
-                        <input  type="checkbox" (change)="CheckPreference(10,employee)">
-                        <!-- <span>❤️</span> -->
-                      </p>
-                      <p *ngIf="employee.state===10">
-                        <input checked type="checkbox" (change)="CheckPreference(0,employee)">
-                        <span ></span>
-                      </p>
-                    </div>
-                    
-                  </div>  
-                    
-              </div>
-            
-            </div>
-        
-          </div>
-        
-
-        
-      <!-- </div> -->
     </div>
-  </section>
+
+    <!-- <div  class="row no-gutters d-flex"> -->
+    <!-- <div *ngIf="isFavoris===false"> -->
+    <div #swiperContainer class="swiper-container">
+      <div class="swiper-wrapper">
+        <!-- Aquí van tus diapositivas -->
+        <!-- <div *ngIf="isFavoris===false"> -->
+        <div *ngFor="let employee of employees" class="swiper-slide">
+          <!-- <div *ngIf="employee.state === 10"> -->
+         
+            <div class="media block-6 services d-block text-center">
+              <div class="div-image">
+                <img [src]="employee.picture" alt="profil ">
+              </div>
+              <!-- <div class="icon"><span class="flaticon-beard"></span></div> -->
+              <div class="media-body">
+                <h3 class="heading mb-3">{{employee.name}}</h3>
+                <p>{{employee.first_name}}</p>
+                <div *ngIf="userConnect">
+                  <p *ngIf="employee.state===0">
+                    <input type="checkbox" (change)="CheckPreference(10,employee)">
+                    <button mat-icon-button color="warn" aria-label="Example icon button with a heart icon">
+                    <mat-icon>favorite</mat-icon>
+                    </button>
+        
+                    
+                    <!-- <button mat-flat-button color="primary">Primary</button>  -->
+                  </p>
+                <div class="example-button-container">
+                  <button mat-fab disabled aria-label="Example icon button with a heart icon">
+                    <mat-icon>favorite</mat-icon>
+                  </button>
+                </div>
+                  <p *ngIf="employee.state===10">
+                    <input checked type="checkbox" (change)="CheckPreference(0,employee)">
+                    <button mat-icon-button color="warn" aria-label="Example icon button with a heart icon">
+                      <mat-icon>favorite</mat-icon>
+                    </button>
+                  </p>
+                </div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+              <!-- </div> -->
+            </div>
+          </div>
+          
+        </div>
+        <!-- </div> -->
+      </div>
+      
+    </div>
+    <!-- <span>❤️</span> -->
+    <!-- </div> -->
+
+
+    <!-- </div> -->
+    <!-- ISFAVORIS  -->
+
+
+
+    <!-- </div> -->
+  </div>
+</section>

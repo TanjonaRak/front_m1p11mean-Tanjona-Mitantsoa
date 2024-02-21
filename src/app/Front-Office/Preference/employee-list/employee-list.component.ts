@@ -1,8 +1,10 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, ViewChild ,Input} from '@angular/core';
 import { Customers, Employee, Service, preferenceEmployee } from 'src/app/model/modelAll';
 import { PreferenceApiService } from 'src/app/service/Preference/preference-api.service';
 import { EmployeeServiceService } from 'src/app/service/employee-service.service';
 import Swiper from 'swiper';
+import { MatIconModule } from '@angular/material/icon';
+import {MatButtonModule} from '@angular/material/button'; 
 
 
 @Component({
@@ -12,6 +14,8 @@ import Swiper from 'swiper';
 })
 export class EmployeeListComponent {
   @ViewChild('swiperContainer') swiperContainer!: ElementRef;
+  // @ViewChild('swiperContainer_2') swiperContainer_2!: ElementRef;
+  @Input()isFavoris : boolean = false 
 
   ngAfterViewInit() {
     const swiper = new Swiper(this.swiperContainer.nativeElement, {
@@ -27,6 +31,7 @@ export class EmployeeListComponent {
   userConnect !: Customers;
 
   ngOnInit():void{
+    window.scrollTo(0,0)
     this.getEmployee();
     
   }
@@ -42,12 +47,23 @@ export class EmployeeListComponent {
     let userConnect = this.apiPreference.getCustomerConnect() as Customers;
     this.userConnect = userConnect;
     console.log("TYVHBHJBHHJ")
-    this.apiPreference.getEmployeePreference(userConnect).subscribe((res:any)=>{
-      console.log(res)
-      if(res.status === 200){
-        this.employees = res.data;
-      }
-    })
+    // if(this.isFavoris===false){
+      this.apiPreference.getEmployeePreference(userConnect).subscribe((res:any)=>{
+        console.log(res)
+        if(res.status === 200){
+          this.employees = res.data;
+        }
+      })
+    // }
+    // else{
+    //   this.apiPreference.getEmployeePreferenceFavoris(userConnect).subscribe((res:any)=>{
+    //     console.log(res)
+    //     if(res.status === 200){
+    //       this.employees = res.data;
+    //     }
+    //   })
+    // }
+    
   }
 
   CheckPreference(state : number,employee:Employee){

@@ -132,9 +132,57 @@ export interface task {
     services: Service,
     date_task: Date,
     hours: string,
-    etat: number,
+    state: number,
     employee: Employee
 }
+
+export const data = [
+    {
+        _id:'1452csdeftt586',
+        services:{
+            _id: "ezf2487878d7q87z87a87z87",
+            name: "Haircut",
+            delay: "0.5",
+            price: "5000",
+            commission: "0.2",
+            photo: "photo",
+            description: "Good work",
+            state: 10,
+            date_create: "15/02/2024",
+            _idpreference:"svsdvs5845212qf1"
+        },
+        date_task:"21/02/2024",
+        hours:"14:00",
+        state:10,
+        employee:{
+            _id:"1458csdthgth0",
+            name:"Tanjona",
+            first_name:"Rakoto"
+        }
+    },{
+        _id:'1452csdeftt586ddf14',
+        services:{
+            _id: "ezcsdeff2487878d7q87z87a87z87",
+            name: "Mackup",
+            delay: "1.5",
+            price: "20000",
+            commission: "0.25",
+            photo: "photo2",
+            description: "Good work",
+            state: 10,
+            date_create: "15/02/2024",
+            _idpreference:"ssvfdv25vsdvs5845212qf1"
+        },
+        date_task:"21/02/2024",
+        hours:"15:00",
+        state:10,
+        employee:{
+            _id:"1458csdthgth0",
+            name:"Tanjona",
+            first_name:"Rakoto"
+        }
+    }
+] 
 
 // tanjonafanirymiaro
 //     tuc7UbAH36NR8hii

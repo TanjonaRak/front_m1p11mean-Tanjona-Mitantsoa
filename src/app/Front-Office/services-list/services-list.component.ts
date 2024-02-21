@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component,Input } from '@angular/core';
 import { Customers, Service, preferenceService } from 'src/app/model/modelAll';
 import { PreferenceApiService } from 'src/app/service/Preference/preference-api.service';
 import { ServiceApiService } from 'src/app/service/service-api/service-api.service';
@@ -15,6 +15,8 @@ export class ServicesListComponent {
 
   }
 
+  @Input()isFavoris : boolean = false
+
   services = [
     {_id:"1",description:"A small river named Duden flows by their place and supplies.",name:"Haircut",delay:"30 min",price:20000,commission:0.2,photo:"flaticon-male-hair-of-head-and-face-shapes"},
     {_id:"2",description:"A small river named Duden flows by their place and supplies.",name:"Beard",delay:"45 min",price:25000,commission:0.2,photo:"flaticon-beard"},
@@ -28,6 +30,7 @@ export class ServicesListComponent {
   userConnect !: Customers;
 
   ngOnInit(){
+    window.scrollTo(0,0)
     let userConnect = this.apiPreference.getCustomerConnect() as Customers;
     this.userConnect = userConnect;
     this.getServiceWithPreference();

@@ -15,6 +15,7 @@ export class ServiceComponent {
   
 
   ngOnInit(): void {
+    window.scrollTo(0,0)
     this.LoaderStatic();
     console.log(this.loading)
   }

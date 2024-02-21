@@ -45,6 +45,10 @@ import { UpdateEmployeeComponent } from './Employee/update-employee/update-emplo
 import { ProfilEmployeeComponent } from './Employee/Profil/profil-employee/profil-employee.component';
 import { PreferenceComponent } from './Front-Office/Preference/preference/preference.component';
 import { EmployeeListComponent } from './Front-Office/Preference/employee-list/employee-list.component';
+import { LeaveEmployeeComponent } from './Back-office/leave-employee/task-employee.component';
+// import { MatIconModule } from '@angular/material/icon';
+
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 // import { UpdateUserComponent } from './Back-office/update-user/update-user.component';
 // import { UpdateEmployeeComponent } from './Back-office/Employee/update-employee/update-employee.component';
@@ -89,6 +93,7 @@ import { EmployeeListComponent } from './Front-Office/Preference/employee-list/e
     ProfilEmployeeComponent,
     PreferenceComponent,
     EmployeeListComponent,
+    LeaveEmployeeComponent,
     // UpdateUserComponent,
     // UpdateEmployeeComponent
   ],
@@ -98,10 +103,12 @@ import { EmployeeListComponent } from './Front-Office/Preference/employee-list/e
     FormsModule,
     MatDialogModule,
     // TieredMenuModule,
+    // LeaveEmployeeComponent,
     MatIconModule,
     MatButtonModule ,
     MatSnackBarModule,
     HttpClientModule,
+    DragDropModule,
     RouterModule.forRoot([
         {
           path:'personne',
@@ -159,9 +166,18 @@ import { EmployeeListComponent } from './Front-Office/Preference/employee-list/e
         {
           path :"employee/:url",
           component:ComponentBaseEmployeeComponent
-        },{
-          path:'preference',
+        },
+        // {
+        //   path:'preference/favoris',
+        //   component:PreferenceComponent
+        // },
+        {
+          path:'preference/:url',
           component:PreferenceComponent
+        },
+        {
+          path:'drag',
+          component:LeaveEmployeeComponent
         }
     ]),
     BrowserAnimationsModule

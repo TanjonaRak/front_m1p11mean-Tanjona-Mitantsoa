@@ -4,16 +4,16 @@
 ==> Projet mean Master 1 :
 
    ==> Mitantsoa :
-       Client :   
+        Client:   
             =>S'inscrire et login (avec token) (task 1)
             =>Prise rendez-vous avec les services (task 3)
             =>Historique des rendez-vous (liste avec recherche)(task 4)
             =>Rappel rendez-vous (Notification ou email)(task 6)
-            =>Paiement en ligne(task 4)
-        Employe :
+            =>Paiement en ligne(task 4) 
+        Employe:
             =>Affichage des rendez-vous (validation or delete rendez-vous)(task 5)
             # (OK)=>Gestion profil et horaire de travail (task 2) 
-        Manager : 
+        Manager: 
            (AZAFADY FA LASA VITAKO TAMPOKA TATO)# =>Gestion des services(CRUD service => nom,prix ,delay , commission) (task 2)
             =>Statistique :
                 =>Le nombre de reservation par jour et par mois(task 7)
@@ -30,7 +30,7 @@
            # =>Gestion profil et horaire de travail (task 2) 
             =>Suivie tache (task 6)
         Manager : 
-           # =>Gestion personnel (task 1 )(CRUD)(drag and drop congé employé)
+           # =>Gestion personnel(task 1 )(CRUD)(drag and drop congé employé)
            # =>Gestion des services(CRUD service => nom,prix ,delay , commission) (task 2)
             =>Statistique :
                 =>Temps moyen de travail pour chaque employé (task 7)

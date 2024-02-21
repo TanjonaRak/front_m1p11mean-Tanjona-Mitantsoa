@@ -5,6 +5,7 @@ import { TableComponent } from '../table/table.component';
 import { UpdateEmployeeComponent } from 'src/app/Employee/update-employee/update-employee.component';
 import { ProfilEmployeeComponent } from 'src/app/Employee/Profil/profil-employee/profil-employee.component';
 import { Employee } from 'src/app/model/modelAll';
+import { LeaveEmployeeComponent } from 'src/app/Back-office/leave-employee/task-employee.component';
 
 @Component({
   selector: 'app-component-base-employee',
@@ -49,6 +50,9 @@ export class ComponentBaseEmployeeComponent {
         this.createDynamicComponent(TableComponent);
       }if(this.showComponent ==="profil"){
           this.createDynamicComponent(ProfilEmployeeComponent);
+      }
+      if(this.showComponent ==="task"){
+        this.createDynamicComponent(LeaveEmployeeComponent);
       }
     // }
   }

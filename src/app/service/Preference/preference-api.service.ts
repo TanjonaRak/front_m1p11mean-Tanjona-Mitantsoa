@@ -46,6 +46,17 @@ export class PreferenceApiService {
     }
   }
 
+  getEmployeePreferenceFavoris(customer:Customers){
+    try {
+      // console.log(url+this.url_base_employee+"/employee/Preference")
+      // console.log(customer)
+      let result = this.httpClient.post(url+this.url_base_employee+"/employee/preference-favoris",JSON.parse(JSON.stringify(customer)));
+      return result;
+    } catch (error) {
+      throw error;
+    }
+  }
+
   CheckPreferenceService(preference:preferenceService,state:number){
     try {
         let result = this.httpClient.post(url+this.url_base_service+"/"+state,preference);

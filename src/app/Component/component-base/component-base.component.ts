@@ -5,6 +5,7 @@ import { AddNewServiceComponent } from 'src/app/Back-office/add-new-service/add-
 import { ActivatedRoute } from '@angular/router';
 import { AddEmployeeComponent } from 'src/app/Employee/add-employee/add-employee.component';
 import { ComponentListUserComponent } from 'src/app/Back-office/component-list-user/component-list-user.component';
+import { LeaveEmployeeComponent } from 'src/app/Back-office/leave-employee/task-employee.component';
 
 @Component({
   selector: 'app-component-base',
@@ -47,6 +48,9 @@ export class ComponentBaseComponent {
         this.createDynamicComponent(ComponentListUserComponent);
       }if(this.showComponent ==="expenses"){
         this.createDynamicComponent(AddEmployeeComponent);
+      }
+      if(this.showComponent ==="Leave"){
+        this.createDynamicComponent(LeaveEmployeeComponent);
       }
     // }
   }
