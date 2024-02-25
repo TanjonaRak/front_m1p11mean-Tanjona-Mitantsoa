@@ -69,6 +69,7 @@ export class ServicesListComponent {
       console.log(res)
       if(res.status === 200 ){
         console.log("Okey")
+        this.getServiceWithPreference();
       }else{
         console.log(res)
       }

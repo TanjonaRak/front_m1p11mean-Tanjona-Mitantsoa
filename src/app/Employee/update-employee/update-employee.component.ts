@@ -20,6 +20,7 @@ export class UpdateEmployeeComponent {
     // console.log("qsdfqsdf")
     // if(data!==null){
       this.employee_to_update = data.employee ;
+      // this.e
     // }
     // console.log(this.service_to_update)
   }
@@ -33,19 +34,24 @@ export class UpdateEmployeeComponent {
   }
 
   ngOnInit(){
-
+    console.log(this.employee_to_update)
+    console.log("BHHBHB")
   }
 
 
   UpdateEmployee(form:NgForm){
-    console.log(this.employee_to_update)
-    this.apiService.UpdateEmployee(this.employee_to_update).subscribe((res:any)=>{
-      if(res.status === 200){
-        this.closeModal.closeModalFonction();
-        this.OpenSnackBar("Update Service with success","Successfull")
-      }else{
-        this.OpenSnackBar(res.message,"Error")
-      }
-    })
+    if(form.valid){
+      console.log(this.employee_to_update)
+      this.apiService.UpdateEmployee(this.employee_to_update).subscribe((res:any)=>{
+        if(res.status === 200){
+          this.closeModal.closeModalFonction();
+          this.OpenSnackBar("Update Service with success","Successfull")
+        }else{
+          this.OpenSnackBar(res.message,"Error")
+        }
+      })
+    }else{
+      this.OpenSnackBar("input obligation", "error");
+    }
   } 
 }

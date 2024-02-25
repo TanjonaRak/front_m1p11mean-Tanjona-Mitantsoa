@@ -1,0 +1,38 @@
+<mat-dialog-content class="mat-typography">
+    <h1>{{employee.name}} {{employee.first_name}}</h1>
+    <!-- <h1 *ngIf="employee.service">{{employee?.service[0]?.name}}</h1> -->
+
+<div class="example-container">
+    <h2>All Service</h2>
+  
+    <div
+      id="todo"
+      cdkDropList
+      #todoList="cdkDropList"
+      [cdkDropListData]="services"
+      [cdkDropListConnectedTo]="[doneList]"
+      class="example-list"
+      (cdkDropListDropped)="drop($event)">
+      <div *ngFor="let item of services; let i = index" style="background-color: cornflowerblue;" cdkDrag>{{item.name}}</div>
+      <!-- <div *ngIf="todo.length==0" style="background-color: greenyellow;">Task finished  </div> -->
+    </div>
+</div>
+  
+<div class="example-container">
+    <h2>Employee Service</h2>
+  
+    <div
+      id="done"
+      cdkDropList
+      #doneList="cdkDropList"
+      [cdkDropListData]="employeeService"
+      [cdkDropListConnectedTo]="[todoList]"
+      class="example-list"
+      (cdkDropListDropped)="drop($event)">
+      <div *ngFor="let item of employeeService; let i = index" style="background-color: cyan;" cdkDrag>{{item.name}}</div>
+      <!-- <div *ngIf="done.length==0">finish  </div> -->
+    </div>
+</div>
+<button [mat-dialog-close]="true" class="btn btn-primary float-right">X</button>
+<button type="submit" class="btn btn-primary float-right" (click)="confirmUpdate()">Confirm</button>
+</mat-dialog-content>

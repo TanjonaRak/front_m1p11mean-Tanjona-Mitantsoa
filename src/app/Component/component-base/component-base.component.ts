@@ -6,6 +6,9 @@ import { ActivatedRoute } from '@angular/router';
 import { AddEmployeeComponent } from 'src/app/Employee/add-employee/add-employee.component';
 import { ComponentListUserComponent } from 'src/app/Back-office/component-list-user/component-list-user.component';
 import { LeaveEmployeeComponent } from 'src/app/Back-office/leave-employee/task-employee.component';
+import { ExpensesComponent } from 'src/app/Back-office/Expenses/expenses/expenses.component';
+import { OfferComponent } from 'src/app/Back-office/Offer/offer/offer.component';
+import { OfferListComponent } from 'src/app/Back-office/Offer/offer-list/offer-list.component';
 
 @Component({
   selector: 'app-component-base',
@@ -47,10 +50,14 @@ export class ComponentBaseComponent {
       }if(this.showComponent === "all-user"){
         this.createDynamicComponent(ComponentListUserComponent);
       }if(this.showComponent ==="expenses"){
-        this.createDynamicComponent(AddEmployeeComponent);
+        this.createDynamicComponent(ExpensesComponent);
       }
       if(this.showComponent ==="Leave"){
         this.createDynamicComponent(LeaveEmployeeComponent);
+      }if(this.showComponent ==="offer"){
+        this.createDynamicComponent(OfferComponent)
+      }if(this.showComponent ==="offer-list"){
+        this.createDynamicComponent(OfferListComponent)
       }
     // }
   }

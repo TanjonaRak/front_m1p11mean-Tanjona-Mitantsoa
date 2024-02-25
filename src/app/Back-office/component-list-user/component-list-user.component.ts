@@ -4,6 +4,7 @@ import { EmployeeServiceService } from 'src/app/service/employee-service.service
 import { MatDialog } from '@angular/material/dialog';
 import { UpdateEmployeeComponent } from 'src/app/Employee/update-employee/update-employee.component';
 import { ServiceModalService } from 'src/app/service/ServiceModal/service-modal.service';
+import { AddServiceEmployeeComponent } from '../add-service-employee/add-service-employee.component';
 function delay(ms:number){
   return new Promise(resolve=>setTimeout(resolve,ms))
 }
@@ -23,6 +24,7 @@ export class ComponentListUserComponent {
 
   numberPage = 0;
   loading  = true;
+  show = false;
 
   employee_to_update :Employee = {
     _id:"",
@@ -74,6 +76,7 @@ export class ComponentListUserComponent {
   }
 
   UpdateEmployee(employee:Employee){
+    
     this.employee_to_update._id = employee._id;
     this.employee_to_update.name =employee.name;
     this.employee_to_update.first_name =employee.first_name;
@@ -82,6 +85,9 @@ export class ComponentListUserComponent {
     this.employee_to_update.password = employee.password;
     this.employee_to_update.time_between = employee.time_between;
     this.employee_to_update.end_time = employee.end_time;
+    this.employee_to_update.service = employee.service;
+    this.employee_to_update.picture = employee.picture
+    console.log("DOUBLE")
     const dialogRef = this.dialog.open(UpdateEmployeeComponent,{
       data : {employee:this.employee_to_update}
     });
@@ -91,6 +97,21 @@ export class ComponentListUserComponent {
   async LoaderStatic (){
     await delay(500);
     this.loading = false
+  }
+
+  AddService(employee:Employee){
+    // this.employee_to_update._id = employee._id;
+    // this.employee_to_update.name =employee.name;
+    // this.employee_to_update.first_name =employee.first_name;
+    // this.employee_to_update.email = employee.email;
+    // this.employee_to_update.login =employee.login;
+    // this.employee_to_update.password = employee.password;
+    // this.employee_to_update.time_between = employee.time_between;
+    // this.employee_to_update.end_time = employee.end_time;
+    // this.employee_to_update.service = employee.service;
+    const dialogRef = this.dialog.open(AddServiceEmployeeComponent,{
+      data:{employee:employee}
+    })
   }
 
 }

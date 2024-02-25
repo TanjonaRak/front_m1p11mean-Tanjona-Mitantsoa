@@ -1,0 +1,113 @@
+<!-- <main class="main"> -->
+
+<div class="content">
+
+    <div class="container-fluid pb-5">
+
+        <div class="row justify-content-md-center">
+            <div class="card-wrapper col-12 col-md-6 mt-5">
+                <div class="brand text-center mb-3">
+                    <h1>New Offer</h1>
+                </div>
+                <!-- <h4 class="card-title">Login</h4> -->
+                <div class="card">
+                    <div class="card-body">
+                        <!-- <h4 class="card-title">Login</h4> -->
+                        <form #forme="ngForm" (ngSubmit)="newOffer(forme)">
+                            <div class="form-group">
+                                <mat-form-field appearance="fill">
+                                    <mat-label>Enter a date range</mat-label>
+                                    <mat-date-range-input [formGroup]="range" [rangePicker]="picker">
+                                        <input matStartDate formControlName="start" placeholder="Start date">
+                                        <input matEndDate formControlName="end" placeholder="End date">
+                                    </mat-date-range-input>
+                                    <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
+                                    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                                    <mat-date-range-picker #picker></mat-date-range-picker>
+
+                                    <!-- <mat-error *ngIf="range.controls.start.hasError('matStartDateInvalid')">Invalid start date</mat-error>
+                                        <mat-error *ngIf="range.controls.end.hasError('matEndDateInvalid')">Invalid end date</mat-error> -->
+                                </mat-form-field>
+
+                                <!-- <p>Selected range: {{range.value | json}}</p> -->
+                            </div>
+                            <!-- <div class="form-group">
+                                <label for="email">Expenses type</label>
+                                <input id="email" type="email" class="form-control" name="name_expense" ngModel required
+                                    #name_expense="ngModel" required="" autofocus="">
+                            </div> -->
+                            <div class="form-group">
+                            <h4>Service</h4>
+                            <mat-form-field appearance="fill">
+                                <mat-label>Service type</mat-label>
+                                <mat-select name="service" ngModel required #service="ngModel">
+                                    <!-- <mat-option>None</mat-option> -->
+                                    <mat-option *ngFor="let service of services" [value]="service">{{service.name}}</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+                            <div class="form-group">
+                                <label for="Reduction ">
+                                    Reduction en %
+                                </label>
+                                <input id="password" type="text" class="form-control" name="reduction" ngModel required
+                                    #amount="ngModel" required="">
+                                <!-- <div class="text-right">
+                                          <a href="password-reset.html" class="small">
+                                              Forgot Your Password?
+                                          </a>
+                                      </div> -->
+                            </div>
+                            <div class="form-group">
+                                <label for="Description">
+                                    Description
+                                </label>
+                                <input id="description" type="text" class="form-control" name="description" ngModel required
+                                    #description="ngModel" required="">
+                                <!-- <div class="text-right">
+                                          <a href="password-reset.html" class="small">
+                                              Forgot Your Password?
+                                          </a>
+                                      </div> -->
+                            </div>
+
+                            <div class="form-group">
+                                <div class="form-check position-relative mb-2">
+                                    <input type="checkbox" class="form-check-input d-none" id="remember"
+                                        name="remember">
+                                    <!-- <label class="checkbox checkbox-xxs form-check-label ml-1" for="remember" -->
+                                    <!-- data-icon="&#xe936">Remember Me</label> -->
+                                </div>
+                            </div>
+
+                            <div class="form-group no-margin">
+
+                                <button class="btn btn-primary btn-block">Save</button>
+                            </div>
+                            <!-- <div class="text-center mt-3 small">
+                                      Don't have an account? <a href="register.html">Sign Up</a>
+                                  </div> -->
+                        </form>
+                    </div>
+                </div>
+                <!-- <footer class="footer mt-3">
+                          <div class="container-fluid">
+                              <div class="footer-content text-center small">
+                                  <span class="text-muted">&copy; 2019 Graindashboard. All Rights Reserved.</span>
+                              </div>
+                          </div>
+                      </footer> -->
+            </div>
+        </div>
+        <div *ngIf="loading===true" id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px"
+                height="48px">
+                <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+                <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
+                    stroke="#F96D00" />
+            </svg></div>
+
+
+    </div>
+
+</div>
+<!-- </main> -->

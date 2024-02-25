@@ -49,12 +49,22 @@ import { LeaveEmployeeComponent } from './Back-office/leave-employee/task-employ
 // import { MatIconModule } from '@angular/material/icon';
 
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { AddServiceEmployeeComponent } from './Back-office/add-service-employee/add-service-employee.component';
+import { ExpensesComponent } from './Back-office/Expenses/expenses/expenses.component';
+import { OfferComponent } from './Back-office/Offer/offer/offer.component';
 
 // import { UpdateUserComponent } from './Back-office/update-user/update-user.component';
 // import { UpdateEmployeeComponent } from './Back-office/Employee/update-employee/update-employee.component';
 // import {MatSpi}
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
-
+import { ReactiveFormsModule } from '@angular/forms';
+// import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatSelectModule } from '@angular/material/select';
+import { OfferListComponent } from './Back-office/Offer/offer-list/offer-list.component';
+// import {MatSele}
 
 
 @NgModule({
@@ -94,6 +104,10 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     PreferenceComponent,
     EmployeeListComponent,
     LeaveEmployeeComponent,
+    AddServiceEmployeeComponent,
+    ExpensesComponent,
+    OfferComponent,
+    OfferListComponent,
     // UpdateUserComponent,
     // UpdateEmployeeComponent
   ],
@@ -108,7 +122,12 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     MatButtonModule ,
     MatSnackBarModule,
     HttpClientModule,
+    MatDatepickerModule,
     DragDropModule,
+    MatFormFieldModule,
+    MatNativeDateModule,
+    ReactiveFormsModule,
+    MatSelectModule,
     RouterModule.forRoot([
         {
           path:'personne',

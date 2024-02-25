@@ -188,10 +188,20 @@ export const data = [
 //     tuc7UbAH36NR8hii
 
 export interface expenses {
-    _id: string,
+    _id?: string,
     name_expense: string,
     amount: number,
     date: Date
+}
+
+export interface Offer{
+    _id?:string,
+    service:Service,
+    start_date :Date,
+    end_date :Date,
+    reduction:number,
+    description ?:string,
+    state ?:number// IF 10 CREER and 0 Cancel 
 }
 
 // mongodb+srv:

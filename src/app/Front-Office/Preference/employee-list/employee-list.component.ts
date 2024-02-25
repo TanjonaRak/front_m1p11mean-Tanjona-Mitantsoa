@@ -79,6 +79,7 @@ export class EmployeeListComponent {
     this.apiPreference.CheckPreference(preference,state).subscribe((res:any)=>{
       console.log(res)
       if(res.status === 200 ){
+        this.getEmployee();
         console.log("Okey")
       }else{
         console.log(res)
