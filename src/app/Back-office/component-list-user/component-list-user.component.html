@@ -29,13 +29,13 @@
                                 <th class="font-weight-semi-bold border-top-0 py-2">First Name</th>
                                 <th class="font-weight-semi-bold border-top-0 py-2">Login</th>
                                 <th class="font-weight-semi-bold border-top-0 py-2">Email</th>
-                                <th class="font-weight-semi-bold border-top-0 py-2">Registration Date</th>
-                                <th class="font-weight-semi-bold border-top-0 py-2">Status</th>
+                                <!-- <th class="font-weight-semi-bold border-top-0 py-2">Registration Date</th> -->
+                                <!-- <th class="font-weight-semi-bold border-top-0 py-2">Status</th> -->
                                 <th class="font-weight-semi-bold border-top-0 py-2">Actions</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr *ngFor="let employee of employees let index">
+                            <tr *ngFor="let employee of employees let index" >
                                 <!-- <td class="py-3">{{index}}</td> -->
                                 <td class="align-middle py-3">
                                     <div class="d-flex align-items-center">
@@ -51,17 +51,17 @@
                                 <td class="py-3">{{employee.first_name}}</td>
                                 <td class="py-3">{{employee.login}}</td>
                                 <td class="py-3">{{employee.email}}</td>
-                                <td class="py-3">
+                                <!-- <td class="py-3">
                                     <span class="badge badge-pill badge-success">{{employee.date_create}}</span>
-                                </td>
-                                <td *ngIf="employee && employee.etat === 10">
+                                </td> -->
+                                <!-- <td *ngIf="employee && employee.etat === 10">
                                     <span class="badge badge-pill badge-success">Active</span>
                                 </td>
                                 <td *ngIf="employee && employee.etat !== 10">
                                     <span class="badge badge-pill badge-error">Vide</span>
-                                </td>
+                                </td> -->
                                 <td class="py-3">
-                                    <div class="position-relative">
+                                    <!-- <div class="position-relative">
                                         <Button class="btn-primary" style="border-radius: 20px;"
                                             (click)="UpdateEmployee(employee)">
                                             edit
@@ -69,7 +69,19 @@
                                         <a class="link-dark d-inline-block" href="#">
                                             <i class="gd-trash icon-text"></i>
                                         </a>
-                                    </div>
+                                    </div> -->
+                                    <div class="example-button-container">
+                                        <button mat-fab aria-label="Example icon button with a heart icon" color="primary"  (click)="UpdateEmployee(employee)">
+                                            <mat-icon>edit</mat-icon>
+                                        </button>
+                                      </div>
+                                </td>
+                                <td class="py-3">
+                                    <div class="example-button-container">
+                                        <button mat-fab aria-label="Example icon button with a heart icon" (click)="AddService(employee)">
+                                            <mat-icon>add</mat-icon>
+                                        </button>
+                                      </div>
                                 </td>
                             </tr>
 

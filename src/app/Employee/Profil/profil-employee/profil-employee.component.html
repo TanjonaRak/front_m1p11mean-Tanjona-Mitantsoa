@@ -3,12 +3,7 @@
 
 
 <div class="content">
-    <div class="div-image" *ngIf="imageEmployee">
-        <img [src]="imageEmployee" alt="profil ">
-    </div>
-    <div class="div-image" *ngIf="!imageEmployee">
-        <img src="../../../assets/images/favicon.png" alt="profil ">
-    </div>
+    
     <div class="py-4 px-3 px-md-4">
         <div class="card mb-3 mb-md-4">
 
@@ -23,7 +18,12 @@
                     </ol>
                 </nav>
                 <!-- End Breadcrumb -->
-
+                <div class="div-image" *ngIf="imageEmployee">
+                    <img [src]="imageEmployee" alt="profil ">
+                </div>
+                <div class="div-image" *ngIf="!imageEmployee">
+                    <img src="assets/images/favicon.png" alt="profil ">
+                </div>
                 <div class="mb-3 mb-md-4 d-flex justify-content-between">
                     <div class="h3 mb-0">Profil</div>
                 </div>
@@ -59,13 +59,15 @@
                                 <label for="password_confirm">Hours end</label>
                                 <input type="time" class="form-control" [(ngModel)]="employee_to_update.end_time" id="end_time" name="end_time" ngModel required #end_time="ngModel">
                             </div> 
+                            <div class="form-group col-12 col-md-6">
+                                <label for="name">Image</label>
+                                <input type="file" class="form-control" (change)="changeImage($event)" 
+                                    placeholder="User Name" >
+                            </div>
                         </div>
-                        <div class="custom-control custom-switch mb-2">
-                            <input type="checkbox" class="custom-control-input" id="randomPassword">
-                            <label class="custom-control-label" for="randomPassword">Set Random Password</label>
-                        </div>
-
-                        <button type="submit" class="btn btn-primary float-right">Create</button>
+                        
+                        
+                        <button type="submit" class="btn btn-primary float-right">Update</button>
                         <button [mat-dialog-close]="true" class="btn btn-primary float-left">Cancel</button>
                     </form>
                 </div>

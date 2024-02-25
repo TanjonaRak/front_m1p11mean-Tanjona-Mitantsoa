@@ -18,3 +18,24 @@
     display: block;
 }
 
+.custom-swiper-button-prev,
+.custom-swiper-button-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 30px;
+  background-color: #4f2e2e;
+  cursor: pointer;
+  /* Styling des flèches personnalisées */
+}
+
+.custom-swiper-button-prev {
+  left: 10px;
+}
+
+.custom-swiper-button-next {
+  right: 10px;
+}
+
+

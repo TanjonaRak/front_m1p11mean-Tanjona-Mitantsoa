@@ -1,0 +1,152 @@
+<div class="content">
+    <div class="py-4 px-3 px-md-4">
+        <div class="card mb-3 mb-md-4">
+
+            <div class="card-body">
+                <!-- Breadcrumb -->
+                <nav class="d-none d-md-block" aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item">
+                            <a href="#">Offer </a>
+                        </li>
+                        <li class="breadcrumb-item active" aria-current="page">All Offer</li>
+                    </ol>
+                </nav>
+                <!-- End Breadcrumb -->
+
+                <div class="mb-3 mb-md-4 d-flex justify-content-between">
+                    <div class="h3 mb-0">Offer</div>
+                </div>
+
+                <div class="table-responsive-xl">
+                    <form #forme="ngForm" (ngSubmit)="Search(forme)">
+                    <table class="table text-nowrap mb-0">
+                        <thead>
+                            <tr>
+                                <!-- <th class="font-weight-semi-bold border-top-0 py-2">#</th> -->
+                                <th class="font-weight-semi-bold border-top-0 py-2">Service</th>
+                                <th class="font-weight-semi-bold border-top-0 py-2"> Date betwen</th>
+                                <th class="font-weight-semi-bold border-top-0 py-2">Search</th>
+                                <!-- <th class="font-weight-semi-bold border-top-0 py-2">Description</th> -->
+                                <!-- <th class="font-weight-semi-bold border-top-0 py-2">Actions</th> -->
+                            </tr>
+                        </thead>
+                       
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <mat-form-field appearance="fill">
+                                        <mat-label>Service type</mat-label>
+                                        <mat-select name="service" ngModel  #service="ngModel">
+                                            <!-- <mat-option>None</mat-option> -->
+                                            <mat-option *ngFor="let service of services" [value]="service">{{service.name}}</mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+                                </td>
+                                <td>
+                                    <div class="form-group">
+                                        <mat-form-field appearance="fill">
+                                            <mat-label>date between</mat-label>
+                                            <mat-date-range-input [formGroup]="range" [rangePicker]="picker">
+                                                <input matStartDate formControlName="start" placeholder="Start date">
+                                                <input matEndDate formControlName="end" placeholder="End date">
+                                            </mat-date-range-input>
+                                            <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
+                                            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                                            <mat-date-range-picker #picker></mat-date-range-picker>
+        
+                                            <!-- <mat-error *ngIf="range.controls.start.hasError('matStartDateInvalid')">Invalid start date</mat-error>
+                                                <mat-error *ngIf="range.controls.end.hasError('matEndDateInvalid')">Invalid end date</mat-error> -->
+                                        </mat-form-field>
+        
+                                        <!-- <p>Selected range: {{range.value | json}}</p> -->
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="form-group no-margin">
+
+                                        <button class="btn btn-primary btn-block">Seach</button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    
+                    </table>
+                </form>
+                </div>
+                <!-- Users -->
+                <div class="table-responsive-xl">
+                    <table class="table text-nowrap mb-0">
+                        <thead>
+                            <tr>
+                                <!-- <th class="font-weight-semi-bold border-top-0 py-2">#</th> -->
+                                <th class="font-weight-semi-bold border-top-0 py-2">Service Name</th>
+                                <th class="font-weight-semi-bold border-top-0 py-2"> Start Date</th>
+                                <th class="font-weight-semi-bold border-top-0 py-2">End Date</th>
+                                <th class="font-weight-semi-bold border-top-0 py-2">Prix service</th>
+                                <th class="font-weight-semi-bold border-top-0 py-2">Prix service reducition</th>
+                                <th class="font-weight-semi-bold border-top-0 py-2">Reduction</th>
+                                <!-- <th class="font-weight-semi-bold border-top-0 py-2">Description</th> -->
+                                <!-- <th class="font-weight-semi-bold border-top-0 py-2">Actions</th> -->
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let offer of offers let index">
+                                <!-- <td class="py-3">{{index}}</td> -->
+                                <td class="align-middle py-3">
+                                    <div class="d-flex align-items-center">
+                                        <div class="position-relative mr-2">
+                                            <span
+                                                class="indicator indicator-lg indicator-bordered-reverse indicator-top-left indicator-success rounded-circle"></span>
+                                            <!--img class="avatar rounded-circle" src="#" alt="John Doe"-->
+                                            <span class="avatar-placeholder mr-md-2">J</span>
+                                        </div>
+                                        {{offer.service.name}}
+                                    </div>
+                                </td>
+                                <td class="py-3">{{offer.start_date}} </td>
+                                <td class="py-3">{{offer.end_date}}</td>
+                                <td class="py-3">{{offer.service.price}} Ar</td>
+                                <td class="py-3">{{offer.service.price - offer.service.price*(offer.reduction/100)}} Ar</td>
+                                <td class="py-3">{{offer.reduction }}%</td>
+                                <!-- <td class="py-3">{{offer.description }}</td> -->
+                                
+                            </tr>
+
+                        </tbody>
+                    </table>
+                    <div *ngIf="loading===true" id="ftco-loader" class="show fullscreen"><svg class="circular"
+                            width="48px" height="48px">
+                            <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4"
+                                stroke="#eeeeee" />
+                            <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4"
+                                stroke-miterlimit="10" stroke="#F96D00" />
+                        </svg></div>
+
+                    <div class="card-footer d-block d-md-flex align-items-center d-print-none">
+                        <div class="d-flex mb-2 mb-md-0">Showing 1 to 8 of 24 Entries</div>
+
+                        <nav class="d-flex ml-md-auto d-print-none" aria-label="Pagination">
+                            <ul class="pagination justify-content-end font-weight-semi-bold mb-0">
+                                <li class="page-item"> <a id="datatablePaginationPrev" class="page-link" href="#!"
+                                        aria-label="Previous"><i
+                                            class="gd-angle-left icon-text icon-text-xs d-inline-block"></i></a> </li>
+                                <li *ngFor="let i of getRange(numberPage)" class="page-item d-none d-md-block"><a
+                                        id="datatablePaginationPage0" class="page-link active" (click)="paginate(i+1)"
+                                        data-dt-page-to="0">{{i+1}}</a></li>
+
+
+                                <li class="page-item"> <a id="datatablePaginationNext" class="page-link" href="#!"
+                                        aria-label="Next"><i
+                                            class="gd-angle-right icon-text icon-text-xs d-inline-block"></i></a> </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <!-- End Users -->
+            </div>
+        </div>
+
+
+    </div>
+</div>

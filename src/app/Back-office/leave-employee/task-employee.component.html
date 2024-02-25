@@ -1,0 +1,31 @@
+<div class="example-container">
+    <h2>Task in progress</h2>
+  
+    <div
+      id="todo"
+      cdkDropList
+      #todoList="cdkDropList"
+      [cdkDropListData]="todo"
+      [cdkDropListConnectedTo]="[doneList]"
+      class="example-list"
+      (cdkDropListDropped)="drop($event)">
+      <div *ngFor="let item of todo; let i = index" style="background-color: red;" cdkDrag>{{item.services.name}} {{item.date_task}} <p>task proccessing</p></div>
+      <div *ngIf="todo.length==0" style="background-color: greenyellow;">Task finished  </div>
+    </div>
+</div>
+  
+<div class="example-container">
+    <h2>Task to finish</h2>
+  
+    <div
+      id="done"
+      cdkDropList
+      #doneList="cdkDropList"
+      [cdkDropListData]="done"
+      [cdkDropListConnectedTo]="[todoList]"
+      class="example-list"
+      (cdkDropListDropped)="drop($event)">
+      <div *ngFor="let item of done; let i = index" style="background-color: greenyellow;" cdkDrag>{{item.services.name}} {{item.date_task}} <p>finished</p></div>
+      <div *ngIf="done.length==0">finish  </div>
+    </div>
+</div>

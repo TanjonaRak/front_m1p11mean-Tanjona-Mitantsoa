@@ -92,7 +92,7 @@
                     <a id="profileMenuInvoker" class="header-complex-invoker" href="#" aria-controls="profileMenu" aria-haspopup="true" aria-expanded="false" data-unfold-event="click" data-unfold-target="#profileMenu" data-unfold-type="css-animation" data-unfold-duration="300" data-unfold-animation-in="fadeIn" data-unfold-animation-out="fadeOut">
                         <!--img class="avatar rounded-circle mr-md-2" src="#" alt="John Doe"-->
                         <span class="mr-md-2 avatar-placeholder">E</span>
-                        <span class="d-none d-md-block">{{user_connected.first_name}}</span>
+                        <span class="d-none d-md-block" *ngIf="user_connected">{{user_connected.first_name}}</span>
                         <i class="gd-angle-down d-none d-md-block ml-2"></i>
                     </a>
 
@@ -199,7 +199,7 @@
             <!-- End Users -->
             <!-- Settings -->
             <li class="side-nav-menu-item">
-                <a class="side-nav-menu-link media align-items-center" routerLink ="/employee/list-appointment">
+                <a class="side-nav-menu-link media align-items-center" routerLink ="/employee/task">
               <span class="side-nav-menu-icon d-flex mr-3">
                 <i class="gd-settings"></i>
               </span>
@@ -230,15 +230,15 @@
                     <nav class="d-none d-md-block" aria-label="breadcrumb">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item">
-                                <a href="#">Users</a>
+                                <!-- <a href="#">Users</a> -->
                             </li>
-                            <li class="breadcrumb-item active" aria-current="page">All Users</li>
+                            <!-- <li class="breadcrumb-item active" aria-current="page">All Users</li> -->
                         </ol>
                     </nav>
                     <!-- End Breadcrumb -->
     
                     <div class="mb-3 mb-md-4 d-flex justify-content-between">
-                        <div class="h3 mb-0">Users</div>
+                        <!-- <div class="h3 mb-0">Users</div> -->
                     </div>
                     <!-- <div [innerHTML] = "componentADD"></div>
                      -->

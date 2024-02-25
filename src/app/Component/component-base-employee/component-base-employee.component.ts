@@ -5,6 +5,8 @@ import { TableComponent } from '../table/table.component';
 import { UpdateEmployeeComponent } from 'src/app/Employee/update-employee/update-employee.component';
 import { ProfilEmployeeComponent } from 'src/app/Employee/Profil/profil-employee/profil-employee.component';
 import { Employee } from 'src/app/model/modelAll';
+import { LeaveEmployeeComponent } from 'src/app/Back-office/leave-employee/task-employee.component';
+import { ServiceModalService } from 'src/app/service/ServiceModal/service-modal.service';
 
 @Component({
   selector: 'app-component-base-employee',
@@ -16,23 +18,43 @@ export class ComponentBaseEmployeeComponent {
 
   @ViewChild('container', { read: ViewContainerRef, static: true }) container!: ViewContainerRef;
 
-  constructor(private resolver: ComponentFactoryResolver,private route: ActivatedRoute) {}
+  constructor(private resolver: ComponentFactoryResolver,private route: ActivatedRoute,private ServiceModal:ServiceModalService) {}
   showComponent : string|null ="home-manager";
 
   user_connected !: Employee;
 
-  ngOnInit(): void {
-
+  getUserConnected(){
+   
     const user_local = localStorage.getItem('user');
+    // console.log("TSS", )
+    let test = (user_local != undefined)
     if(user_local){
+      console.log("sdddsvdv")
       const user = JSON.parse(user_local) as Employee;
       this.user_connected = user;
+    }else{
+      console.log("MIDITRA ATOOOO ")
+      window.location.href = "";
     }
+  }
+
+  ngOnInit(): void {
+
+    // const user_local = localStorage.getItem('user');
+    // if(user_local){
+    //   const user = JSON.parse(user_local) as Employee;
+    //   this.user_connected = user;
+    // }
+    this.getUserConnected();
     this.route.paramMap.subscribe(params => {
       this.showComponent = params.get('url');
       console.log('URL récupérée :', this.showComponent);
       this.ngAfterViewInit();
     });
+    this.ServiceModal.changeUSer$.subscribe(()=>{
+      // console.log("FYIEJFNJNJN");
+      this.getUserConnected();
+    })
   }
 
   ngAfterViewInit() {
@@ -49,6 +71,9 @@ export class ComponentBaseEmployeeComponent {
         this.createDynamicComponent(TableComponent);
       }if(this.showComponent ==="profil"){
           this.createDynamicComponent(ProfilEmployeeComponent);
+      }
+      if(this.showComponent ==="task"){
+        this.createDynamicComponent(LeaveEmployeeComponent);
       }
     // }
   }

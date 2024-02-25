@@ -1,0 +1,16 @@
+.div-image{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto;
+    position: relative;
+    transform: translateY(-50%);
+    margin-top: 10%;
+}
+
+.div-image img{
+    width: 100%;
+    height: auto;
+    display: block;
+}

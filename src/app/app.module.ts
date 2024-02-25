@@ -45,14 +45,19 @@ import { UpdateEmployeeComponent } from './Employee/update-employee/update-emplo
 import { ProfilEmployeeComponent } from './Employee/Profil/profil-employee/profil-employee.component';
 import { PreferenceComponent } from './Front-Office/Preference/preference/preference.component';
 import { EmployeeListComponent } from './Front-Office/Preference/employee-list/employee-list.component';
-import { AppointmentComponent } from './Front-Office/appointment/appointment.component';
-import { CustomerRegisterComponent } from './Back-office/customer-register/customer-register.component';
 
 // import { UpdateUserComponent } from './Back-office/update-user/update-user.component';
 // import { UpdateEmployeeComponent } from './Back-office/Employee/update-employee/update-employee.component';
 // import {MatSpi}
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
-
+import { ReactiveFormsModule } from '@angular/forms';
+// import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatSelectModule } from '@angular/material/select';
+import { OfferListComponent } from './Back-office/Offer/offer-list/offer-list.component';
+// import {MatSele}
 
 
 @NgModule({
@@ -91,8 +96,6 @@ import { CustomerRegisterComponent } from './Back-office/customer-register/custo
     ProfilEmployeeComponent,
     PreferenceComponent,
     EmployeeListComponent,
-    AppointmentComponent,
-    CustomerRegisterComponent,
     // UpdateUserComponent,
     // UpdateEmployeeComponent
   ],
@@ -102,10 +105,17 @@ import { CustomerRegisterComponent } from './Back-office/customer-register/custo
     FormsModule,
     MatDialogModule,
     // TieredMenuModule,
+    // LeaveEmployeeComponent,
     MatIconModule,
     MatButtonModule ,
     MatSnackBarModule,
     HttpClientModule,
+    MatDatepickerModule,
+    DragDropModule,
+    MatFormFieldModule,
+    MatNativeDateModule,
+    ReactiveFormsModule,
+    MatSelectModule,
     RouterModule.forRoot([
         {
           path:'personne',
@@ -163,15 +173,14 @@ import { CustomerRegisterComponent } from './Back-office/customer-register/custo
         {
           path :"employee/:url",
           component:ComponentBaseEmployeeComponent
-        },{
-          path:'preference',
+        },
+        // {
+        //   path:'preference/favoris',
+        //   component:PreferenceComponent
+        // },
+        {
+          path:'preference/:url',
           component:PreferenceComponent
-        },{
-          path : 'appointment',
-          component:AppointmentComponent
-        },{
-          path : 'Register',
-          component:CustomerRegisterComponent
         }
     ]),
     BrowserAnimationsModule

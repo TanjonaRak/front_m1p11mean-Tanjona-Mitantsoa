@@ -14,7 +14,14 @@ export class ServiceModalService {
 
   closeModal$ = this.closeModal.asObservable();
   
+  private changeUser = new Subject<void>();
+  changeUSer$ = this.changeUser.asObservable();
+  
   closeModalFonction():void{
     this.closeModal.next();
+  }
+
+  changeUserFonction():void{
+    this.changeUser.next();
   }
 }

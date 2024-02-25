@@ -1,49 +1,49 @@
 
-  <section class="services-section ftco-section">
-    <div class="container">
-
-       <div class="row justify-content-center pb-3">
-        <div class="col-md-10 heading-section text-center ftco-booking">
-           <span class="subheading">Employee</span>
-          <h2 class="mb-4">List of Employee with swiper</h2>
-          <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
-        </div>
+<section class="ftco-section ftco-team">
+  <div class="container-fluid px-md-5">
+    <div class="row justify-content-center pb-3">
+      <div class="col-md-10 heading-section text-center ftco-animated">
+        <span class="subheading">Artistic Director</span>
+        <h2 class="mb-4">Our Artist</h2>
+        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
       </div>
-
-      <!-- <div  class="row no-gutters d-flex"> -->
-        <div #swiperContainer class="swiper-container">
-            <div class="swiper-wrapper">
-              <!-- Aquí van tus diapositivas -->
-              <div *ngFor ="let employee of employees" class="swiper-slide">
-                <div class="media block-6 services d-block text-center">
-                    <div class="div-image">
-                        <img [src]="employee.picture" alt="profil ">
+    </div>
+    <div class="row">
+      <!-- <div class="col-md-4"></div> -->
+      <div class="col-md-12 ftco-animated">
+        <div class="carousel-team col-md-12">
+          <div class="item">
+            <div class="row">
+              <div class="col-md-3" *ngFor="let employee of employees">
+                <a  class="team text-center">
+                  <div class="img" >
+                    <!-- <div class="div-image"> -->
+                      <img [src]="employee.picture" alt="profil ">
                     </div>
-                    <!-- <div class="icon"><span class="flaticon-beard"></span></div> -->
-                    <div class="media-body">
-                      <h3 class="heading mb-3">{{employee.name}}</h3>
-                      <p>{{employee.first_name}}</p>
-                      
+                  <!-- </div> -->
+                  <h2>{{employee.first_name}}</h2>
+                  <span *ngFor="let serv of employee.service" class="position">{{serv.name}}-</span>
+                  
+                  <div>
+                    <div *ngIf="userConnect">
                       <p *ngIf="employee.state===0">
-                        <input  type="checkbox" (change)="CheckPreference(10,employee)">
-                        <!-- <span>❤️</span> -->
+                        <button (click)="CheckPreference(10,employee)"><span >🤍</span></button>
                       </p>
                       <p *ngIf="employee.state===10">
-                        <input checked type="checkbox" (change)="CheckPreference(0,employee)">
-                        <span ></span>
+                        <!-- <input checked type="checkbox" (change)="CheckPreference(0,service)" style="background-color: brown;"> -->
+                        <button (click)="CheckPreference(0,employee)"><span >❤️</span></button>
                       </p>
                     </div>
-                    
-                  </div>  
-                    
-              </div>
-            
-            </div>
-        
-          </div>
-        
+                  </div>
 
-        
-      <!-- </div> -->
+                </a>
+              </div>
+             
+            </div>
+          </div>
+          <!-- Repeat the structure for the remaining stylists -->
+        </div>
+      </div>
     </div>
-  </section>
+  </div>
+</section>
