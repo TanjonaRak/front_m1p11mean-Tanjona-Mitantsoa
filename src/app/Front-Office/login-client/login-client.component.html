@@ -22,12 +22,12 @@
                  <div class="row">
                    <div class="col-sm-12">
                      <div class="form-group">
-                         <input type="text" class="form-control" id="appointment_name" placeholder="Email or phone number">
+                         <input type="text" class="form-control" name="email" placeholder="Email or phone number" ngModel required #email="ngModel">
                        </div>
                    </div>
                    <div class="col-sm-12">
                      <div class="form-group">
-                       <input type="password" class="form-control" id="phone" placeholder="password">
+                       <input type="password" class="form-control" name="pass" placeholder="password" ngModel required #pass="ngModel">
                      </div>
                    </div>
                   </div>
