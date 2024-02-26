@@ -95,7 +95,7 @@ import { OfferListComponent } from './Back-office/Offer/offer-list/offer-list.co
     UpdateEmployeeComponent,
     ProfilEmployeeComponent,
     PreferenceComponent,
-    EmployeeListComponent,
+    EmployeeListComponent
     // UpdateUserComponent,
     // UpdateEmployeeComponent
   ],
@@ -179,6 +179,7 @@ import { OfferListComponent } from './Back-office/Offer/offer-list/offer-list.co
         //   component:PreferenceComponent
         // },
         {
+
           path:'preference/:url',
           component:PreferenceComponent
         }
