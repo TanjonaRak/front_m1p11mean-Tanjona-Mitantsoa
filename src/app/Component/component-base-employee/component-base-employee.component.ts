@@ -7,6 +7,7 @@ import { ProfilEmployeeComponent } from 'src/app/Employee/Profil/profil-employee
 import { Employee } from 'src/app/model/modelAll';
 import { LeaveEmployeeComponent } from 'src/app/Back-office/leave-employee/task-employee.component';
 import { ServiceModalService } from 'src/app/service/ServiceModal/service-modal.service';
+import { TaskEmployeeComponent } from 'src/app/Employee/Task/task-employee/task-employee.component';
 
 @Component({
   selector: 'app-component-base-employee',
@@ -73,7 +74,7 @@ export class ComponentBaseEmployeeComponent {
           this.createDynamicComponent(ProfilEmployeeComponent);
       }
       if(this.showComponent ==="task"){
-        this.createDynamicComponent(LeaveEmployeeComponent);
+        this.createDynamicComponent(TaskEmployeeComponent);
       }
     // }
   }
