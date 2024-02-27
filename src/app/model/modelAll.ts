@@ -65,10 +65,10 @@ export interface Employee_Service {
 
 export interface appointment {
     _id: string,
-    client: Customers,
+    customer: Customers,
     service: Service,
     employee: Employee,
-    dateAppoitment: Date,
+    dateAppointment: Date,
     hours: string,
     etat: number,
     date_create: Date

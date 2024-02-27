@@ -66,6 +66,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';
 import { OfferListComponent } from './Back-office/Offer/offer-list/offer-list.component';
+import { ModalMeetUpComponent } from './Front-Office/appointment/modal-meet-up/modal-meet-up.component';
 // import {MatSele}
 
 
@@ -106,7 +107,13 @@ import { OfferListComponent } from './Back-office/Offer/offer-list/offer-list.co
     PreferenceComponent,
     EmployeeListComponent,
     AppointmentComponent,
+     LeaveEmployeeComponent,
+    AddServiceEmployeeComponent,
+    ExpensesComponent,
+    OfferComponent,
+    OfferListComponent,
     CustomerRegisterComponent,
+    ModalMeetUpComponent,
     // UpdateUserComponent,
     // UpdateEmployeeComponent
   ],

@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Employee } from '../model/modelAll';
+import { Employee, appointment } from '../model/modelAll';
 import url from '../config/config';
 
 @Injectable({
@@ -10,7 +10,7 @@ import url from '../config/config';
 export class EmployeeServiceService {
 
   url_base = "/employee";
-
+  url_base_appointment = "/appointment";
   constructor(private httpClient:HttpClient) { }
 
   CreateEmployee(employee_to_create:Employee ):Observable<any>{
@@ -50,4 +50,30 @@ export class EmployeeServiceService {
     }
   }
 
+  getHourAvaalaible (appointment : appointment){
+    try {
+      console.log("appoointelsvwcx ",appointment);
+      let result  = this.httpClient.post(url+this.url_base_appointment+"/getCompareTimeService",appointment);
+      return result;
+
+    } catch (error) {
+      throw error;
+    }
+  }
+
+  getEmployeeByAppointment(appointment:appointment){
+    try {
+      return this.httpClient.post(url+this.url_base_appointment+"/employee-appointment",appointment);
+    } catch (error) {
+      throw error;
+    }
+  }
+
+  SaveAppointment(appointment:appointment){
+    try {
+        return this.httpClient.post(url+this.url_base_appointment,appointment);      
+    } catch (error) {
+      throw error
+    }
+  }
 }
