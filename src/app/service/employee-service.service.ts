@@ -76,4 +76,12 @@ export class EmployeeServiceService {
       throw error
     }
   }
+
+  getTask(employee:Employee){
+    try {
+      return this.httpClient.post(url+this.url_base_appointment+"employee-task",employee);
+    } catch (error) {
+      throw error;
+    }
+  }
 }
