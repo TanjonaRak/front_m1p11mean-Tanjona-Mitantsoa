@@ -9,6 +9,7 @@ import { Customers } from 'src/app/model/modelAll';
 export class CustomersApiService {
 
   url_base = "/customer";
+  url_base_App = "/appointment"
   constructor(private httpClient:HttpClient) { }
 
   LogingProcessing (email: string,pass : string){
@@ -26,5 +27,13 @@ export class CustomersApiService {
   } catch (error) {
     throw error;
   }
+  }
+  GetHistoryAppointment(cust : Customers){
+    try {
+      let res = this.httpClient.post(url+this.url_base_App+"/getAppHistory",JSON.parse(JSON.stringify(cust)));
+      return res;
+    } catch (error) {
+      throw error;
+    }
   }
 }

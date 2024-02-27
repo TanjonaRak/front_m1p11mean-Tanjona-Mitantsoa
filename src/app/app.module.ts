@@ -68,6 +68,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { OfferListComponent } from './Back-office/Offer/offer-list/offer-list.component';
 import { TaskEmployeeComponent } from './Employee/Task/task-employee/task-employee.component';
 import { ModalMeetUpComponent } from './Front-Office/appointment/modal-meet-up/modal-meet-up.component';
+import { AppointmentHistoryComponent } from './Front-Office/appointment-history/appointment-history.component';
 // import {MatSele}
 
 
@@ -116,6 +117,7 @@ import { ModalMeetUpComponent } from './Front-Office/appointment/modal-meet-up/m
     TaskEmployeeComponent,
     CustomerRegisterComponent,
     ModalMeetUpComponent,
+    AppointmentHistoryComponent
     // UpdateUserComponent,
     // UpdateEmployeeComponent
   ],
@@ -211,6 +213,9 @@ import { ModalMeetUpComponent } from './Front-Office/appointment/modal-meet-up/m
         {
           path:'drag',
           component:LeaveEmployeeComponent
+        },{
+          path:'appointmentHistory',
+          component:AppointmentHistoryComponent
         }
     ]),
     BrowserAnimationsModule
