@@ -1,7 +1,10 @@
 import { Component,Input } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Customers, Service, preferenceService } from 'src/app/model/modelAll';
 import { PreferenceApiService } from 'src/app/service/Preference/preference-api.service';
+import { ServiceModalService } from 'src/app/service/ServiceModal/service-modal.service';
 import { ServiceApiService } from 'src/app/service/service-api/service-api.service';
+import { ModalMeetUpComponent } from '../appointment/modal-meet-up/modal-meet-up.component';
 
 @Component({
   selector: 'app-services-list',
@@ -11,17 +14,17 @@ import { ServiceApiService } from 'src/app/service/service-api/service-api.servi
 export class ServicesListComponent {
 
 
-  constructor(private apiService:ServiceApiService,private apiPreference:PreferenceApiService){
+  constructor(private apiService:ServiceApiService,private apiPreference:PreferenceApiService,public dialog: MatDialog,private ServiceModal:ServiceModalService){
 
   }
 
   @Input()isFavoris : boolean = false
 
   services = [
-    {_id:"1",description:"A small river named Duden flows by their place and supplies.",name:"Haircut",delay:"30 min",price:20000,commission:0.2,photo:"flaticon-male-hair-of-head-and-face-shapes"},
-    {_id:"2",description:"A small river named Duden flows by their place and supplies.",name:"Beard",delay:"45 min",price:25000,commission:0.2,photo:"flaticon-beard"},
-    {_id:"2",description:"A small river named Duden flows by their place and supplies.",name:"Makeup",delay:"45 min",price:25000,commission:0.2,photo:"flaticon-beard"},
-    {_id:"2",description:"A small river named Duden flows by their place and supplies.",name:"Body Treatment",delay:"45 min",price:25000,commission:0.2,photo:"flaticon-healthy-lifestyle-logo"}
+    {_id:"1",description:"A small river named Duden flows by their place and supplies.",name:"Service Name",delay:"30",price:20000,commission:0.2,photo:"flaticon-male-hair-of-head-and-face-shapes"},
+    {_id:"2",description:"A small river named Duden flows by their place and supplies.",name:"Service Name",delay:"45",price:25000,commission:0.2,photo:"flaticon-beard"},
+    {_id:"2",description:"A small river named Duden flows by their place and supplies.",name:"Service Name",delay:"45",price:25000,commission:0.2,photo:"flaticon-beard"},
+    {_id:"2",description:"A small river named Duden flows by their place and supplies.",name:"Service Name",delay:"45",price:25000,commission:0.2,photo:"flaticon-healthy-lifestyle-logo"}
   ] as Service[];
 
   offset = 0;
@@ -34,6 +37,9 @@ export class ServicesListComponent {
     let userConnect = this.apiPreference.getCustomerConnect() as Customers;
     this.userConnect = userConnect;
     this.getServiceWithPreference();
+    this.ServiceModal.closeModal$.subscribe(()=>{
+      this.dialog.closeAll();
+    })
   }
 
   // customer	{"_id":"65c3d8112f807500c11291b9","name":"Rakoto","first_name":"Jean"}
@@ -76,7 +82,11 @@ export class ServicesListComponent {
     });
   }
 
-
+  MeetUP(service:Service){
+    const dialogRef = this.dialog.open(ModalMeetUpComponent,{
+      data : {service:service}
+    });
+  }
 
 
 }

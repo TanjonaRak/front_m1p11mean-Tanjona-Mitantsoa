@@ -45,6 +45,8 @@ import { UpdateEmployeeComponent } from './Employee/update-employee/update-emplo
 import { ProfilEmployeeComponent } from './Employee/Profil/profil-employee/profil-employee.component';
 import { PreferenceComponent } from './Front-Office/Preference/preference/preference.component';
 import { EmployeeListComponent } from './Front-Office/Preference/employee-list/employee-list.component';
+import { AppointmentComponent } from './Front-Office/appointment/appointment.component';
+import { CustomerRegisterComponent } from './Back-office/customer-register/customer-register.component';
 import { LeaveEmployeeComponent } from './Back-office/leave-employee/task-employee.component';
 // import { MatIconModule } from '@angular/material/icon';
 
@@ -65,6 +67,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';
 import { OfferListComponent } from './Back-office/Offer/offer-list/offer-list.component';
 import { TaskEmployeeComponent } from './Employee/Task/task-employee/task-employee.component';
+import { ModalMeetUpComponent } from './Front-Office/appointment/modal-meet-up/modal-meet-up.component';
 // import {MatSele}
 
 
@@ -104,12 +107,15 @@ import { TaskEmployeeComponent } from './Employee/Task/task-employee/task-employ
     ProfilEmployeeComponent,
     PreferenceComponent,
     EmployeeListComponent,
-    LeaveEmployeeComponent,
+    AppointmentComponent,
+     LeaveEmployeeComponent,
     AddServiceEmployeeComponent,
     ExpensesComponent,
     OfferComponent,
     OfferListComponent,
     TaskEmployeeComponent,
+    CustomerRegisterComponent,
+    ModalMeetUpComponent,
     // UpdateUserComponent,
     // UpdateEmployeeComponent
   ],
@@ -195,6 +201,12 @@ import { TaskEmployeeComponent } from './Employee/Task/task-employee/task-employ
         {
           path:'preference/:url',
           component:PreferenceComponent
+        },{
+          path : 'appointment',
+          component:AppointmentComponent
+        },{
+          path : 'Register',
+          component:CustomerRegisterComponent
         },
         {
           path:'drag',

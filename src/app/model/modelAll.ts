@@ -72,7 +72,7 @@ export interface appointment {
     customer: Customers,
     service: Service,
     employee: Employee,
-    dateAppoitment: Date,
+    dateAppointment: Date,
     hours: string,
     state: number,
     date_create: Date

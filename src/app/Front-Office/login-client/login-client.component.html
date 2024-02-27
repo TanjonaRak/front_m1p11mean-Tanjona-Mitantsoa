@@ -12,29 +12,31 @@
             <div class="col-md-10 heading-section text-center ftco-booking">
                <span class="subheading">Login client</span>
               <h2 class="mb-4">Login</h2>
-              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
+              
             </div>
           </div>
-          <h3 class="vr">Call Us: 012-3456-7890</h3>
+          <h3 class="vr"></h3>
             <div class="row justify-content-center">
                <div class="col-md-4 ftco-booking">
                   <form #forme="ngForm" (ngSubmit)="Connect(forme)" class="appointment-form">
                  <div class="row">
                    <div class="col-sm-12">
                      <div class="form-group">
-                         <input type="text" class="form-control" id="appointment_name" placeholder="Email or phone number">
+                         <input type="text" class="form-control" name="email" placeholder="Email or phone number" ngModel required #email="ngModel">
                        </div>
                    </div>
                    <div class="col-sm-12">
                      <div class="form-group">
-                       <input type="password" class="form-control" id="phone" placeholder="password">
+                       <input type="password" class="form-control" name="pass" placeholder="password" ngModel required #pass="ngModel">
                      </div>
                    </div>
                   </div>
                   <div class="col-sm-12">
                     <div class="form-group">
                    <input type="submit" value="Login" class="btn btn-primary">
+                   
                 </div>
+                <a href="/Register">Customer Register</a>
                  </div>
                  
                </form>
