@@ -1,3 +1,6 @@
+<div>
+  
+  <h1 style="margin-left: 50%;">Task </h1>
 <div class="example-container">
     <h2>Task in progress</h2>
   
@@ -28,4 +31,5 @@
       <div *ngFor="let item of done; let i = index" style="background-color: greenyellow;" cdkDrag>{{item.services.name}} {{item.date_task}} <p>finished</p></div>
       <div *ngIf="done.length==0">finish  </div>
     </div>
+</div>
 </div>

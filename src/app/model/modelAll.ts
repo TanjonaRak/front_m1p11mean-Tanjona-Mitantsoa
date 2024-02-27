@@ -9,8 +9,12 @@ export interface Customers {
     first_name: string,
     password: string,
     email: string,
-    photo: string
+    photo?: string,
+    phone?:string
 }
+
+
+
 
 
 export interface Service {
@@ -65,15 +69,78 @@ export interface Employee_Service {
 
 export interface appointment {
     _id: string,
-    client: Customers,
+    customer: Customers,
     service: Service,
     employee: Employee,
     dateAppoitment: Date,
     hours: string,
-    etat: number,
+    state: number,
     date_create: Date
 }
 
+
+const dataAppoietment =[
+    {
+        _id :"145854551dqraertgfee111",
+        client : {
+            _id: "479454qsceerojij",
+            name: "Rakoto",
+            first_name: "Bertine",
+            password: "151c5sqdefaeteEF3",
+            email: "rakoto@gmail.com",
+            phone:"03265895874"
+        },
+        service :{
+            
+                "_id": "65d0af988d711f14501e28dc",
+                "name": "Onglerie",
+                "delay": 1.5,
+                "price": 200000,
+                "commission": 0.5,
+                "date_create":  "2024-02-17T13:07:36.005Z",
+                "state": 10,
+                "__v": 0
+        },
+        employee : {
+            "_id": "65ca9115ce43054736d4d682",
+            "name": "Rambeloarison Mitantsoa",
+            "first_name": "Tanjona",
+            "login": "Admin",
+            "email": "nyainamitantsoa1@gmail.com",
+            "password": "12",
+            "etat": 10,
+            "service": [
+              {
+                "_id": "65d6805d9e6551a126b9a6da",
+                "name": "Massage Visage",
+                "delay": 2,
+                "price": 50000,
+                "commission": 0.25,
+                "description": "this service is the best service in our working",
+                "date_create": "2024-02-21T22:59:41.624Z",
+                "state": 10,
+                "__v": 0
+              },
+              {
+                "_id": "65d0af988d711f14501e28dc",
+                "name": "Onglerie",
+                "delay": 1.5,
+                "price": 200000,
+                "commission": 0.5,
+                "date_create": "2024-02-17T13:07:36.005Z",
+                "state": 10,
+                "__v": 0
+              }
+            ],
+            "date_create": "2024-02-12T21:43:49.937Z",
+            "__v": 0
+          },
+          dateAppoitment:"2024-02-26T21:43:49.937Z",
+          hours:"08:00",
+          state : 10,
+          date_create: "2024-02-22T21:43:49.937Z"
+    }
+]
 
 export interface Employee_appointment {
     _id: string,
