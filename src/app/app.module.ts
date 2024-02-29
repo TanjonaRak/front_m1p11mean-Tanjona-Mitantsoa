@@ -233,6 +233,9 @@ import { LoginEmployeeComponent } from './Employee/Login/login-employee/login-em
         },{
           path:'login-employee',
           component :LoginEmployeeComponent
+        },{
+          path:'artist',
+          component :EmployeeListComponent
         }
     ]),
     BrowserAnimationsModule
