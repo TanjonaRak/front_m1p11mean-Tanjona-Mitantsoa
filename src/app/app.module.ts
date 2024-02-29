@@ -69,6 +69,10 @@ import { OfferListComponent } from './Back-office/Offer/offer-list/offer-list.co
 import { TaskEmployeeComponent } from './Employee/Task/task-employee/task-employee.component';
 import { ModalMeetUpComponent } from './Front-Office/appointment/modal-meet-up/modal-meet-up.component';
 import { AppointmentHistoryComponent } from './Front-Office/appointment-history/appointment-history.component';
+import { AllAppointmentComponent } from './Back-office/all-appointment/all-appointment.component';
+import { CanvasJSAngularChartsModule } from '@canvasjs/angular-charts';
+import { StatAppointmentComponent } from './Back-Office/Statistiques/stat-appointment/stat-appointment.component';
+
 // import {MatSele}
 
 
@@ -117,7 +121,9 @@ import { AppointmentHistoryComponent } from './Front-Office/appointment-history/
     TaskEmployeeComponent,
     CustomerRegisterComponent,
     ModalMeetUpComponent,
-    AppointmentHistoryComponent
+    AppointmentHistoryComponent,
+    AllAppointmentComponent,
+    StatAppointmentComponent
     // UpdateUserComponent,
     // UpdateEmployeeComponent
   ],
@@ -138,6 +144,7 @@ import { AppointmentHistoryComponent } from './Front-Office/appointment-history/
     MatNativeDateModule,
     ReactiveFormsModule,
     MatSelectModule,
+    CanvasJSAngularChartsModule,
     RouterModule.forRoot([
         {
           path:'personne',

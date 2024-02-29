@@ -9,6 +9,7 @@ import { LeaveEmployeeComponent } from 'src/app/Back-office/leave-employee/task-
 import { ExpensesComponent } from 'src/app/Back-office/Expenses/expenses/expenses.component';
 import { OfferComponent } from 'src/app/Back-office/Offer/offer/offer.component';
 import { OfferListComponent } from 'src/app/Back-office/Offer/offer-list/offer-list.component';
+import { StatAppointmentComponent } from 'src/app/Back-Office/Statistiques/stat-appointment/stat-appointment.component';
 
 @Component({
   selector: 'app-component-base',
@@ -59,6 +60,10 @@ export class ComponentBaseComponent {
       }if(this.showComponent ==="offer-list"){
         this.createDynamicComponent(OfferListComponent)
       }
+      if(this.showComponent ==="stat-appointment"){
+        this.createDynamicComponent(StatAppointmentComponent)
+      }
+
     // }
   }
 

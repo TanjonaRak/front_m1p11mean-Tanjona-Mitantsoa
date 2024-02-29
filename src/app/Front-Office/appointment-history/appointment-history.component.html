@@ -23,22 +23,28 @@
     <div class="col-lg-12 sidebar ftco-animated">
 <div class="sidebar-box bg-light ftco-animated">
     <h3 class="heading-2">Categories</h3>
-  <ul class="categories">
-    <table [width]="1">
-        <tr tr *ngFor="let appoint of appointment">
-            <td>{{appoint.hours}}</td>
-            <br>
-            <td>jfdnlfd</td>
+ 
+    <table border="0" class="form-control" [width]="1000">
+      <tr>
+        <th>Service name : </th>
+        <th>Date </th>
+        <th>hours</th>
+        <th>Status</th>
+      </tr>
+        <tr  *ngFor="let appoint of appointment">
+            <td>{{appoint.service.name}}</td>
+           <td >{{formatDate(appoint.dateAppointment)}}</td>
+           <td>{{appoint.hours}}</td>
+           
+           <td *ngIf="appoint.state==0"><p><span>💰</span> Pay</p></td>
+           <td *ngIf="appoint.state==10"><p><span>❌</span> Unpaid</p></td>
         </tr>
     </table>
-<tr> 
-  <li><a href="#"><span> </span><span>qdsvSF</span></a></li>
-</tr> 
-  </ul>
 </div>
     </div>
           </div>
         </div>
     </section>
+  
 </body>
 </html>

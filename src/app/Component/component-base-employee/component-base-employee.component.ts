@@ -8,6 +8,7 @@ import { Employee } from 'src/app/model/modelAll';
 import { LeaveEmployeeComponent } from 'src/app/Back-office/leave-employee/task-employee.component';
 import { ServiceModalService } from 'src/app/service/ServiceModal/service-modal.service';
 import { TaskEmployeeComponent } from 'src/app/Employee/Task/task-employee/task-employee.component';
+import { AllAppointmentComponent } from 'src/app/Back-office/all-appointment/all-appointment.component';
 
 @Component({
   selector: 'app-component-base-employee',
@@ -68,13 +69,16 @@ export class ComponentBaseEmployeeComponent {
       if(this.showComponent ==="all-service"){
         this.createDynamicComponent(AllServiceComponent);
       }
-      if(this.showComponent ==="home-employee" || this.showComponent ==="list-appointment"){
+      if(this.showComponent ==="home-employee"){
         this.createDynamicComponent(TableComponent);
       }if(this.showComponent ==="profil"){
           this.createDynamicComponent(ProfilEmployeeComponent);
       }
       if(this.showComponent ==="task"){
         this.createDynamicComponent(TaskEmployeeComponent);
+      }
+      if(this.showComponent=="list-appointment"){
+        this.createDynamicComponent(AllAppointmentComponent);
       }
     // }
   }

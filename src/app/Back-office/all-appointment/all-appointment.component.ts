@@ -1,34 +1,31 @@
 import { Component } from '@angular/core';
-import { Customers, appointment } from 'src/app/model/modelAll';
-import { CustomersApiService } from 'src/app/service/Customers/customers-api.service';
+import { Employee, appointment } from 'src/app/model/modelAll';
+import { EmployeeServiceService } from 'src/app/service/employee-service.service';
 
 @Component({
-  selector: 'app-appointment-history',
-  templateUrl: './appointment-history.component.html',
-  styleUrls: ['./appointment-history.component.css']
+  selector: 'app-all-appointment',
+  templateUrl: './all-appointment.component.html',
+  styleUrls: ['./all-appointment.component.css']
 })
-export class AppointmentHistoryComponent {
-
-  cust ={
-    name : "John Doe"
- } as Customers;
-
+export class AllAppointmentComponent {
+  emp = {
+    name : "Jane"
+  } as Employee;
   appointment : appointment[]=[];
-  constructor(public apiService:CustomersApiService){}
-  
-  ngOnInit():void{ 
-    this.getHistoryApp();
-  }
+  constructor(public empService : EmployeeServiceService){}
 
-  getHistoryApp (){
+  ngOnInit(){
+    this.getAppointmentPerEmp();
+  }
+  getAppointmentPerEmp (){
     
-    let item = localStorage.getItem('customer');
+    let item = localStorage.getItem('user');
     let monObjetRecupere;
     if (item !== null) {
         monObjetRecupere = JSON.parse(item);
-        let id = monObjetRecupere.id;
+        let id = monObjetRecupere._id;
         console.log(id);
-        this.apiService.GetHistoryAppointment(monObjetRecupere).subscribe((res:any)=>{
+        this.empService.getAppointmentPerEmploye(monObjetRecupere).subscribe((res:any)=>{
           if(res.status === 200){
             console.log("res = ",res.data);
             this.appointment = res.data  as appointment[];
@@ -38,11 +35,12 @@ export class AppointmentHistoryComponent {
     }
   }
 
-   formatDate  (inputDate: Date | string | undefined|any) {
+  formatDate  (inputDate: Date | string | undefined|any) {
     // console.log(JSON.stringify(inputDate));
     if(!inputDate){
         return '';
     }
+
     const parsedDate = typeof inputDate === 'string' ? new Date(inputDate.split('T')[0]) : inputDate;
     if (isNaN(parsedDate.getTime())) {
         return ''; // Handle invalid date
