@@ -12,7 +12,12 @@ import { ServiceModalService } from 'src/app/service/ServiceModal/service-modal.
 })
 export class UpdateServiceComponent {
 
-  service_to_update  !: Service;
+  service_to_update  ={
+    name: "",
+    delay: "",
+    price: 0,
+    commission: 0,
+  } as  Service;
 
 
   

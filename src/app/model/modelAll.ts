@@ -26,7 +26,7 @@ export interface Service {
     photo?: string,
     description?: string,
     state?: number,
-    date_create?: String,
+    date_create?: string,
     _idpreference?:string
 }
 
@@ -152,7 +152,7 @@ export interface Employee_appointment {
 
 export interface manager {
     _id: string,
-    name: string,
+    name?: string,
     login ?: string,
     first_name?: string,
     email?: string,

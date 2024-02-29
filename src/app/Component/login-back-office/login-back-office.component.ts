@@ -15,8 +15,8 @@ export class LoginBackOfficeComponent {
 
 
   manager = {
-    login : "Admin",
-    password :"admin"
+    login : 'Admin',
+    password :'admin'
   } as manager
 
 
