@@ -68,7 +68,16 @@ import { MatSelectModule } from '@angular/material/select';
 import { OfferListComponent } from './Back-office/Offer/offer-list/offer-list.component';
 import { TaskEmployeeComponent } from './Employee/Task/task-employee/task-employee.component';
 import { ModalMeetUpComponent } from './Front-Office/appointment/modal-meet-up/modal-meet-up.component';
+import { StateManagerComponent } from './Back-office/State/state-manager/state-manager.component';
+// import { StateManagerComponent } from './Manager/State/state-manager/state-manager.component';
 // import {MatSele}
+import { MatCardModule } from '@angular/material/card';
+// import { MatIconModule } from '@angular/material/icon';
+import { MatToolbarModule } from '@angular/material/toolbar';
+// @ts-ignore
+// import { MatChartModule } from '@angular/material/chart';
+import { CanvasJSAngularChartsModule } from '@canvasjs/angular-charts';
+import { LoginEmployeeComponent } from './Employee/Login/login-employee/login-employee.component';
 
 
 @NgModule({
@@ -116,6 +125,9 @@ import { ModalMeetUpComponent } from './Front-Office/appointment/modal-meet-up/m
     TaskEmployeeComponent,
     CustomerRegisterComponent,
     ModalMeetUpComponent,
+    StateManagerComponent,
+    LoginEmployeeComponent,
+    // StateManagerComponent,
     // UpdateUserComponent,
     // UpdateEmployeeComponent
   ],
@@ -136,6 +148,12 @@ import { ModalMeetUpComponent } from './Front-Office/appointment/modal-meet-up/m
     MatNativeDateModule,
     ReactiveFormsModule,
     MatSelectModule,
+    MatToolbarModule,
+    MatCardModule,
+    MatIconModule,
+    // CommonModule,
+    CanvasJSAngularChartsModule, // Importez CanvasJSAngularChartsModule ici
+   // Ajout du module de graphiques
     RouterModule.forRoot([
         {
           path:'personne',
@@ -162,7 +180,8 @@ import { ModalMeetUpComponent } from './Front-Office/appointment/modal-meet-up/m
         {
           path:'login',
           component:LoginClientComponent
-        },{
+        },
+        {
           path:'login-admin',
           component:LoginBackOfficeComponent
         },
@@ -194,7 +213,7 @@ import { ModalMeetUpComponent } from './Front-Office/appointment/modal-meet-up/m
           path :"employee/:url",
           component:ComponentBaseEmployeeComponent
         },
-        // {
+        // {++++++++++++++
         //   path:'preference/favoris',
         //   component:PreferenceComponent
         // },
@@ -211,6 +230,9 @@ import { ModalMeetUpComponent } from './Front-Office/appointment/modal-meet-up/m
         {
           path:'drag',
           component:LeaveEmployeeComponent
+        },{
+          path:'login-employee',
+          component :LoginEmployeeComponent
         }
     ]),
     BrowserAnimationsModule

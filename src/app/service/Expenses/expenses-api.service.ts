@@ -10,6 +10,7 @@ export class ExpensesApiService {
 
   url_base = "/expenses";
   url_base_offer = "/offer";
+  url_base_state = "/state";
 
   constructor(private httpClient : HttpClient) { }
   
@@ -33,6 +34,14 @@ export class ExpensesApiService {
   getOffer(offer:Offer,offset:Number,limit:Number){
     try {
         return this.httpClient.post(url+this.url_base_offer+"/"+offset+"/"+limit,offer)
+    } catch (error) {
+      throw error;
+    }
+  }
+
+  getStateManager(year:number,month:number){
+    try {
+      return this.httpClient.post(url+this.url_base_state+"/"+year+"/"+month,null);
     } catch (error) {
       throw error;
     }

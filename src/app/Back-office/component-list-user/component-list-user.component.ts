@@ -32,7 +32,8 @@ export class ComponentListUserComponent {
     first_name:"",
     email:"",
     password:"",
-    login:""
+    login:"",
+    salary:0
   }
 
   constructor (private apiService : EmployeeServiceService,public dialog: MatDialog,private ServiceModal:ServiceModalService){
@@ -87,6 +88,7 @@ export class ComponentListUserComponent {
     this.employee_to_update.end_time = employee.end_time;
     this.employee_to_update.service = employee.service;
     this.employee_to_update.picture = employee.picture
+    this.employee_to_update.salary = employee.salary;
     console.log("DOUBLE")
     const dialogRef = this.dialog.open(UpdateEmployeeComponent,{
       data : {employee:this.employee_to_update}

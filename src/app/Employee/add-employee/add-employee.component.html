@@ -69,6 +69,11 @@
                                     name="confirm_password" placeholder="Confirm Password" ngModel required #confirm_password="ngModel">
                             </div>
                             <div class="form-group col-12 col-md-6">
+                                <label for="password_confirm">Salary</label>
+                                <input type="text" class="form-control" value="" id="Salary"
+                                    name="salary" placeholder="salary" ngModel required #salary="ngModel">
+                            </div>
+                            <div class="form-group col-12 col-md-6">
                                 <label for="name">time_between</label>
                                 <input type="time" class="form-control"  value="" id="time_between" name="time_between"
                                     placeholder="Time between" ngModel required #time_between="ngModel">
@@ -84,13 +89,22 @@
                                     placeholder="User Name" >
                             </div>
                             <div class="form-group col-12 col-md-6">
-                                <label for="name">Service</label>
+                                <!-- <label for="name">Service</label> -->
+                                <h4>Service</h4>
                                 <!-- <input type="file" class="form-control" (change)="changeImage($event)" value="" id="name" name="name"
                                     placeholder="User Name" ngModel required #name="ngModel"> -->
-                                    <select class="form-control" id="service" name="service" ngModel required #service="ngModel" >
-                                        <option *ngFor="let service of services" value='{_id:{{service._id}},name:{{service.name}},price:{{service.price}},commission:{{service.commission}},delay:{{service.delay}}}'>{{service.name}}</option>
-                                    </select>
+                                    <!-- <select class="form-control" id="service" name="service" ngModel required #service="ngModel" >
+                                        <option *ngFor="let service of services" value='{{service.name}}'>{{service.name}}</option>
+                                    </select> -->
+                                    <mat-form-field appearance="fill">
+                                        <mat-label>Service type</mat-label>
+                                        <mat-select name="service" ngModel required #service="ngModel">
+                                            <!-- <mat-option>None</mat-option> -->
+                                            <mat-option *ngFor="let service of services" [value]="service">{{service.name}}</mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
                             </div>
+
                         </div>
                         <div class="custom-control custom-switch mb-2">
                             <input type="checkbox" class="custom-control-input" id="randomPassword">

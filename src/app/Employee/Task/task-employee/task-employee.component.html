@@ -1,36 +1,40 @@
 <div>
-  
+
+
     <h1 style="margin-left: 50%;">Task </h1>
-  <div class="example-container">
-      <h2>Task in progress</h2>
-    
-      <div
-        id="todo"
-        cdkDropList
-        #todoList="cdkDropList"
-        [cdkDropListData]="todo"
-        [cdkDropListConnectedTo]="[doneList]"
-        class="example-list"
-        (cdkDropListDropped)="drop($event)">
-        <div *ngFor="let item of todo; let i = index" style="background-color: red;" cdkDrag>{{item.services.name}} {{item.date_task}} <p>task proccessing</p></div>
-        <div *ngIf="todo.length==0" style="background-color: greenyellow;">Task finished  </div>
-      </div>
-  </div>
-    
-  <div class="example-container">
-      <h2>Task to finish</h2>
-    
-      <div
-        id="done"
-        cdkDropList
-        #doneList="cdkDropList"
-        [cdkDropListData]="done"
-        [cdkDropListConnectedTo]="[todoList]"
-        class="example-list"
-        (cdkDropListDropped)="drop($event)">
-        <div *ngFor="let item of done; let i = index" style="background-color: greenyellow;" cdkDrag>{{item.services.name}} {{item.date_task}} <p>finished</p></div>
-        <div *ngIf="done.length==0">finish  </div>
-      </div>
-  </div>
-  </div>
-  
+    <div class="card-wrapper col-12 col-md-6 mt-5">
+        <form>
+            <div >
+                <h3>Choice a Date {{date}} Commission : {{commission}} Ar</h3>
+            <input type="date" name="date" class="form-control" placeholder="Date" [(ngModel)]="date"
+                (change)="getDate($event)">
+            </div>
+        </form>
+    </div>
+    <div class="example-container">
+        <h2>Task in progress</h2>
+
+        <div id="todo" cdkDropList #todoList="cdkDropList" [cdkDropListData]="todo"
+            [cdkDropListConnectedTo]="[doneList]" class="example-list" (cdkDropListDropped)="drop($event)">
+            <div *ngFor="let item of todo; let i = index" style="background-color: red;" cdkDrag>{{item.service.name}}
+               le {{item.dateAppointment}} à {{item.hours}}<p>task proccessing</p>
+               <p>Commission :  {{item.service.price - item.service.price*item.service.commission}} Ar</p>
+
+            </div>
+            <div *ngIf="todo.length==0" style="background-color: greenyellow;">Task finished </div>
+        </div>
+    </div>
+
+    <div class="example-container">
+        <h2>Task to finish</h2>
+
+        <div id="done" cdkDropList #doneList="cdkDropList" [cdkDropListData]="done"
+            [cdkDropListConnectedTo]="[todoList]" class="example-list" (cdkDropListDropped)="drop($event)">
+            <div *ngFor="let item of done; let i = index" style="background-color: greenyellow;" cdkDrag>
+                {{item.service.name}} {{item.dateAppointment}} {{item.hours}} <p>finished</p>
+                <p>Commission :  {{item.service.price - item.service.price*item.service.commission}} Ar</p>
+            </div>
+            <div *ngIf="done.length==0">finish </div>
+        </div>
+    </div>
+</div>

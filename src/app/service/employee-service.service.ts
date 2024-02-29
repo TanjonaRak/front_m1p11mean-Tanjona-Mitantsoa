@@ -14,10 +14,25 @@ export class EmployeeServiceService {
   constructor(private httpClient:HttpClient) { }
 
   CreateEmployee(employee_to_create:Employee ):Observable<any>{
-    // console.log(JSON.stringify(employee_to_create))
+    console.log(employee_to_create)
     try {
       let res = this.httpClient.post(url+this.url_base,JSON.parse(JSON.stringify(employee_to_create)));
       return res;
+    } catch (error) {
+      throw error;
+    }
+  }
+
+  getEmployeeConnected():Employee{
+    try {
+      let localEmployee = localStorage.getItem("user");
+      console.log(localEmployee)
+      let employeeConnected !: Employee;
+      if(localEmployee){
+        employeeConnected = JSON.parse(localEmployee) as Employee;
+        return employeeConnected;
+      }
+      return  employeeConnected;
     } catch (error) {
       throw error;
     }
@@ -77,11 +92,41 @@ export class EmployeeServiceService {
     }
   }
 
-  getTask(employee:Employee){
+  getTask(employee:Employee,dateTask:string){
     try {
-      return this.httpClient.post(url+this.url_base_appointment+"employee-task",employee);
+      let dataSend = {
+        employee:employee,
+        dateTask:dateTask
+      }
+      console.log(JSON.stringify(dataSend))
+      return this.httpClient.post(url+this.url_base_appointment+"/employee-task",dataSend);
     } catch (error) {
       throw error;
     }
   }
+
+  UpdateTask(id_task:string,state:Number){
+    try {
+      return this.httpClient.put(url+this.url_base_appointment+"/employee-task/"+id_task+"/"+state,null);
+    } catch (error) {
+      throw error;
+    }
+  }
+
+  getDateFormat(date:Date):string{
+    const year = date.getFullYear();
+    // JavaScript considère les mois de 0 à 11, donc on ajoute 1 pour obtenir le mois réel
+    const month = String(date.getMonth() + 1).padStart(2, '0'); 
+    const day = String(date.getDate()).padStart(2, '0');
+    return `${year}-${month}-${day}`;
+  }
+
+  LoginEmployee(employee:Employee){
+    try {
+      return this.httpClient.post(url+this.url_base+"/login-employee",employee);
+    } catch (error) {
+      throw error;
+    }
+  }
+
 }

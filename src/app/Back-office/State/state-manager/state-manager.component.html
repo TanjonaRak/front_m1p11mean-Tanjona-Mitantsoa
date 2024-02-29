@@ -1,0 +1,29 @@
+<div class="card-wrapper col-12 col-md-6 mt-5">
+<form #forme="ngForm" (ngSubmit)="FilterMonth(forme)">
+<h4>Month</h4>
+<mat-form-field appearance="fill">
+    <mat-label>Month</mat-label>
+    <mat-select name="month" ngModel required #month="ngModel">
+        <!-- <mat-option>None</mat-option> -->
+        <mat-option *ngFor="let month of monthChoice" [value]="month">{{month.name}}</mat-option>
+    </mat-select>
+</mat-form-field>
+<mat-form-field appearance="fill">
+    <mat-label>Year</mat-label>
+    <mat-select name="year" ngModel required #year="ngModel">
+        <!-- <mat-option>None</mat-option> -->
+        <mat-option *ngFor="let year of yearchoice" [value]="year">{{year}}</mat-option>
+    </mat-select>
+</mat-form-field>
+<div >
+    <button class="btn btn-primary btn-block">Filter</button>
+</div>
+</form>
+</div>
+<div *ngIf="chartOptions">
+    <canvasjs-chart [options]="chartOptions" [styles]="{width: '100%', height: '360px'}"></canvasjs-chart>    
+</div>  
+
+<div *ngIf="chartOptionsbenefice">
+    <canvasjs-chart [options]="chartOptionsbenefice" [styles]="{width: '100%', height: '360px'}"></canvasjs-chart>    
+</div>  

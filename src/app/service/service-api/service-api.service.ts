@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Service } from 'src/app/model/modelAll';
+import { Service, manager } from 'src/app/model/modelAll';
 import url from 'src/app/config/config';
 
 @Injectable({
@@ -9,6 +9,8 @@ import url from 'src/app/config/config';
 export class ServiceApiService {
 
   url_base = "/service";
+  url_base_manager = "/manager";
+
 
   constructor(private httpClient:HttpClient) { }
 
@@ -38,6 +40,14 @@ export class ServiceApiService {
       return res;
     } catch (error) {
         throw error;
+    }
+  }
+
+  Login(manager:manager){
+    try {
+        return this.httpClient.post(url+this.url_base_manager+"/login",manager);
+    } catch (error) {
+       throw error;
     }
   }
 }

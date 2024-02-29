@@ -36,7 +36,8 @@ export class AddEmployeeComponent {
     etat : 10,
     photo : "",
     time_between:"",
-    end_time:""
+    end_time:"",
+    salary:0
   } as Employee
 
   confirm_password = "";
@@ -81,6 +82,8 @@ export class AddEmployeeComponent {
   createEmployee(form:NgForm) {
     // console.log("vdfvfgeg")
     console.log(form.value.service)
+    let dataService = [] as Service[]
+    // dataService.push(JSON.parse("\""+form.value.service+"\""));
     this.employee_to_add.name = form.value.name
     this.employee_to_add.first_name = form.value.first_name
     this.employee_to_add.login = form.value.login
@@ -89,7 +92,8 @@ export class AddEmployeeComponent {
     this.confirm_password = form.value.confirm_password;
     this.employee_to_add.time_between = form.value.time_between;
     this.employee_to_add.end_time = form.value.end_time;
-    this.employee_to_add.service = [form.value.service as Service];
+    this.employee_to_add.service =[form.value.service];
+    this.employee_to_add.salary = form.value.salary;
     // console.log(this.employee_to_add)
     // console.log(this.employee_to_add.password !==this.confirm_password)
     // if(this.employee_to_add.password !==this.confirm_password){

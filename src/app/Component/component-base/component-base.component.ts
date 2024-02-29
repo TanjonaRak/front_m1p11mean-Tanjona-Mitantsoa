@@ -9,6 +9,7 @@ import { LeaveEmployeeComponent } from 'src/app/Back-office/leave-employee/task-
 import { ExpensesComponent } from 'src/app/Back-office/Expenses/expenses/expenses.component';
 import { OfferComponent } from 'src/app/Back-office/Offer/offer/offer.component';
 import { OfferListComponent } from 'src/app/Back-office/Offer/offer-list/offer-list.component';
+import { StateManagerComponent } from 'src/app/Back-office/State/state-manager/state-manager.component';
 
 @Component({
   selector: 'app-component-base',
@@ -25,22 +26,23 @@ export class ComponentBaseComponent {
   showComponent : string|null ="home-manager";
 
   ngOnInit(): void {
-    this.route.paramMap.subscribe(params => {
-      this.showComponent = params.get('url');
-      console.log('URL récupérée :', this.showComponent);
-      this.ngAfterViewInit();
-    });
+    let local = localStorage.getItem('manager');
+
+    if(!local){
+      window.location.href ="";
+    }else{
+      this.route.paramMap.subscribe(params => {
+        this.showComponent = params.get('url');
+        console.log('URL récupérée :', this.showComponent);
+        this.ngAfterViewInit();
+      });
+    }
+    
   }
 
   ngAfterViewInit() {
-    
-    // if (this.componentType) {
-    //   console.log("MIDITRA")
-    //   this.createDynamicComponent(this.componentType); // Créer le composant dynamiquement
-    // }else{
-      // console.log(this.showComponent)
       if(this.showComponent ==="home-manager"){
-        this.createDynamicComponent(TableComponent);
+        this.createDynamicComponent(StateManagerComponent);
       }if(this.showComponent ==="all-service"){
         this.createDynamicComponent(AllServiceComponent);
       }if(this.showComponent ==="new-service"){

@@ -47,7 +47,8 @@ export interface Employee {
     working_hours?:working_hours,
     picture?:string,
     state?:number,
-    _idpreference?:string
+    _idpreference?:string,
+    salary ?: number
 }
 
 
@@ -152,9 +153,10 @@ export interface Employee_appointment {
 export interface manager {
     _id: string,
     name: string,
-    first_name: string,
-    email: string,
-    password: string
+    login ?: string,
+    first_name?: string,
+    email?: string,
+    password?:string
 }
 
 

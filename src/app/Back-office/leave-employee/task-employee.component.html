@@ -12,7 +12,7 @@
       [cdkDropListConnectedTo]="[doneList]"
       class="example-list"
       (cdkDropListDropped)="drop($event)">
-      <div *ngFor="let item of todo; let i = index" style="background-color: red;" cdkDrag>{{item.services.name}} {{item.date_task}} <p>task proccessing</p></div>
+      <div *ngFor="let item of todo; let i = index" style="background-color: red;" cdkDrag>{{item.service.name}} {{item.dateAppointment}} {{item.hours}} <p>task proccessing</p></div>
       <div *ngIf="todo.length==0" style="background-color: greenyellow;">Task finished  </div>
     </div>
 </div>
@@ -28,7 +28,7 @@
       [cdkDropListConnectedTo]="[todoList]"
       class="example-list"
       (cdkDropListDropped)="drop($event)">
-      <div *ngFor="let item of done; let i = index" style="background-color: greenyellow;" cdkDrag>{{item.services.name}} {{item.date_task}} <p>finished</p></div>
+      <div *ngFor="let item of done; let i = index" style="background-color: greenyellow;" cdkDrag>{{item.service.name}} {{item.dateAppointment}} {{item.hours}} <p>finished</p></div>
       <div *ngIf="done.length==0">finish  </div>
     </div>
 </div>
