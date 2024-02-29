@@ -21,7 +21,7 @@ export class CustomerRegisterComponent {
 
     customerRegister (form :NgForm){
       try {
-        this.newCustomer.name = form.value.name;
+      this.newCustomer.name = form.value.name;
       this.newCustomer.first_name = form.value.first_name;
       this.newCustomer.password = form.value.password;
       this.newCustomer.email = form.value.email;

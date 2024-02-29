@@ -13,19 +13,19 @@ import { TableComponent } from 'src/app/Component/table/table.component';
 export class HomeManagerComponent {
   // items: any[] = [];
 
-  @ViewChild('container', { read: ViewContainerRef }) container!: ViewContainerRef;
+  // @ViewChild('container', { read: ViewContainerRef }) container!: ViewContainerRef;
 
-  componentADD :string ="<app-table></app-table>";
-  componentArgument : any = TableComponent
+  // componentADD :string ="<app-table></app-table>";
+  // componentArgument : any = TableComponent
 
-  constructor(private resolver: ComponentFactoryResolver) {}
+  // constructor(private resolver: ComponentFactoryResolver) {}
 
-  ngAfterViewInit() {
-    const factory = this.resolver.resolveComponentFactory(TableComponent); // Remplacez AppTableComponent par votre composant
-    this.container.createComponent(factory);
-  }
+  // ngAfterViewInit() {
+  //   const factory = this.resolver.resolveComponentFactory(TableComponent); // Remplacez AppTableComponent par votre composant
+  //   this.container.createComponent(factory);
+  // }
 
-  Show(){
+  // Show(){
     
-  }
+  // }
 }
