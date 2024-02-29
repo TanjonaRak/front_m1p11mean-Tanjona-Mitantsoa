@@ -128,5 +128,29 @@ export class EmployeeServiceService {
       throw error;
     }
   }
+  getAppointmentPerEmploye (employee:Employee){
+    try {
+      let res = this.httpClient.post(url+this.url_base+"/AppointmentEmp",JSON.parse(JSON.stringify(employee)));
+      return res;
+    } catch (error) {
+      throw error;
+    }
+  }
+  getNbrAppointmentPerDayPerMonth (year:number,month:number){
+    try {
+      let log = this.httpClient.get(`${url}${this.url_base}/${"state-app"}/${year}/${month}`);
+      return log;
+    } catch (error) {
+      throw error;
+    }
+  }
+  getTurnover (year:number,month:number){
+    try {
+      let log = this.httpClient.get(`${url}${this.url_base_appointment}/${year}/${month}`);
+      return log;
+    } catch (error) {
+      throw error;
+    }
+  }
 
 }

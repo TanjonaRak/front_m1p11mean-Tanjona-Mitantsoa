@@ -70,6 +70,11 @@ import { TaskEmployeeComponent } from './Employee/Task/task-employee/task-employ
 import { ModalMeetUpComponent } from './Front-Office/appointment/modal-meet-up/modal-meet-up.component';
 import { StateManagerComponent } from './Back-office/State/state-manager/state-manager.component';
 // import { StateManagerComponent } from './Manager/State/state-manager/state-manager.component';
+import { AppointmentHistoryComponent } from './Front-Office/appointment-history/appointment-history.component';
+import { AllAppointmentComponent } from './Back-office/all-appointment/all-appointment.component';
+// import { CanvasJSAngularChartsModule } from '@canvasjs/angular-charts';
+import { StatAppointmentComponent } from './Back-Office/Statistiques/stat-appointment/stat-appointment.component';
+
 // import {MatSele}
 import { MatCardModule } from '@angular/material/card';
 // import { MatIconModule } from '@angular/material/icon';
@@ -128,6 +133,9 @@ import { LoginEmployeeComponent } from './Employee/Login/login-employee/login-em
     StateManagerComponent,
     LoginEmployeeComponent,
     // StateManagerComponent,
+    AppointmentHistoryComponent,
+    AllAppointmentComponent,
+    StatAppointmentComponent
     // UpdateUserComponent,
     // UpdateEmployeeComponent
   ],
@@ -232,7 +240,10 @@ import { LoginEmployeeComponent } from './Employee/Login/login-employee/login-em
           component:LeaveEmployeeComponent
         },{
           path:'login-employee',
-          component :LoginEmployeeComponent
+          component :LoginEmployeeComponent},
+          {
+          path:'appointmentHistory',
+          component:AppointmentHistoryComponent
         }
     ]),
     BrowserAnimationsModule
