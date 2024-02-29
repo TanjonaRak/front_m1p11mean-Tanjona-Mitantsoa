@@ -18,8 +18,8 @@
 
       <div class="collapse navbar-collapse" id="ftco-nav">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item"><a href="/login-employee" class="btn btn-primary btn-outline-primary px-4 py-2">login Employee</a></li>
-          <li class="nav-item"><a routerLink="/login-admin" class="btn btn-primary btn-outline-primary px-4 py-2">login Manager</a></li>
+          <li class="nav-item" *ngIf="isConnected===false"><a href="/login-employee" class="btn btn-primary btn-outline-primary px-4 py-2">login Employee</a></li>
+          <li class="nav-item" *ngIf="isConnected===false"><a routerLink="/login-admin" class="btn btn-primary btn-outline-primary px-4 py-2">login Manager</a></li>
             <li class="nav-item active"><a routerLink="/home" class="nav-link">Home</a></li>
             <li class="nav-item"><a routerLink="/service" class="nav-link">Services</a></li>
             <li class="nav-item"><a routerLink="/preference/employee-service" class="nav-link">Artist </a></li>
@@ -27,7 +27,8 @@
             <li class="nav-item"><a routerLink="/appointment" class="nav-link">Meet up </a></li>
             <li class="nav-item"><a routerLink="/appointmentHistory" class="nav-link">History</a></li>
           <!-- <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li> -->
-          <li class="nav-item"><a routerLink="/login" class="btn btn-primary btn-outline-primary px-4 py-2">login client</a></li>
+          <li class="nav-item" *ngIf="isConnected===false"><a routerLink="/login" class="btn btn-primary btn-outline-primary px-4 py-2">login client</a></li>
+          <li class="nav-item" *ngIf="isConnected===true"><a (click)="logout()" class="btn btn-primary btn-outline-primary px-4 py-2">Logout</a></li>
           <li></li>
           <!-- <li class="nav-item"><a href="blog.html" class="btn btn-primary btn-outline-primary px-4 py-2">register client</a></li> -->
         </ul>

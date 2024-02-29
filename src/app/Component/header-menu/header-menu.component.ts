@@ -7,4 +7,22 @@ import { Component } from '@angular/core';
 })
 export class HeaderMenuComponent {
 
+
+  isConnected = false;
+
+  getCustomer(){
+    let customerLocal = localStorage.getItem("customer");
+    if(customerLocal){
+      this.isConnected = true;
+    }
+  }
+
+  ngOnInit(){
+    this.getCustomer();
+  }
+
+  logout(){
+    this.isConnected = false
+  }
+
 }
