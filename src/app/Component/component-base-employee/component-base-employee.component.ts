@@ -70,7 +70,7 @@ export class ComponentBaseEmployeeComponent {
         this.createDynamicComponent(AllServiceComponent);
       }
       if(this.showComponent ==="home-employee"){
-        this.createDynamicComponent(TableComponent);
+        this.createDynamicComponent(AllAppointmentComponent);
       }if(this.showComponent ==="profil"){
           this.createDynamicComponent(ProfilEmployeeComponent);
       }
