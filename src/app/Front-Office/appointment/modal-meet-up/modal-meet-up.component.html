@@ -27,60 +27,62 @@
                         <form #forme="ngForm" (ngSubmit)="newAppointment(forme)">
                             <div class="form-row">
                                 <div class="form-group col-12 col-md-6">
+                                    <h5>Date Appointment</h5>
                                     <input type="date" name="date" class="form-control" placeholder="Date"
                                         [(ngModel)]="date" (change)="getDate($event)">
                                 </div>
-                                <br />
-                                <p></p>
+                                <!-- <br />
+                                <p></p> -->
                                 <!-- <div class="form-group col-12 col-md-6"> -->
-                                    <div class="example-container" hidden>
-                                        <h2>Task in progress</h2>
+                                <div class="example-container" hidden>
+                                    <h2>Task in progress</h2>
 
-                                        <div id="todo" cdkDropList #todoList="cdkDropList"
-                                            [cdkDropListData]="hoursChoice" [cdkDropListConnectedTo]="[doneList]"
-                                            class="example-list" (cdkDropListDropped)="drop($event)">
-                                            <div *ngFor="let item of hoursChoice; let i = index"
-                                                style="background-color: red;" cdkDrag>{{item.hourAppointment}} à
-                                                {{item.hoursPlage}} <p>task proccessing</p>
-                                            </div>
-                                            <div *ngIf="hoursChoice.length==0" style="background-color: greenyellow;">
-                                                Task
-                                                finished </div>
+                                    <div id="todo" cdkDropList #todoList="cdkDropList" [cdkDropListData]="hoursChoice"
+                                        [cdkDropListConnectedTo]="[doneList]" class="example-list"
+                                        (cdkDropListDropped)="drop($event)">
+                                        <div *ngFor="let item of hoursChoice; let i = index"
+                                            style="background-color: red;" cdkDrag>{{item.hourAppointment}} à
+                                            {{item.hoursPlage}} <p>task proccessing</p>
                                         </div>
+                                        <div *ngIf="hoursChoice.length==0" style="background-color: greenyellow;">
+                                            Task
+                                            finished </div>
                                     </div>
+                                </div>
 
-                                    <div class="example-container">
-                                        <h5>Hours Appointment Avalaible : </h5>
+                                <div class="example-container">
+                                    <h5>Hours Appointment Avalaible : </h5>
 
-                                        <div id="done" cdkDropList #doneList="cdkDropList"
-                                            [cdkDropListData]="hoursAvalaible" [cdkDropListConnectedTo]="[todoList]"
-                                            class="example-list" (cdkDropListDropped)="drop($event)">
-                                            <div *ngFor="let item of hoursAvalaible; let i = index"
-                                                style="background-color: rgb(10, 98, 170);" cdkDrag>{{item.hourAppointment}}
-                                                à
-                                                {{item.hoursPlage}} <p>Hours Avalaible</p>
-                                            </div>
-                                            <div *ngIf="hoursAvalaible.length==0">finish</div>
+                                    <div id="done" cdkDropList #doneList="cdkDropList"
+                                        [cdkDropListData]="hoursAvalaible" [cdkDropListConnectedTo]="[todoList]"
+                                        class="example-list" (cdkDropListDropped)="drop($event)">
+                                        <div *ngFor="let item of hoursAvalaible; let i = index"
+                                            style="background-color: rgb(10, 98, 170);" cdkDrag>{{item.hourAppointment}}
+                                            à
+                                            {{item.hoursPlage}} <p>Hours Avalaible</p>
                                         </div>
+                                        <div *ngIf="hoursAvalaible.length==0">Hours</div>
                                     </div>
+                                </div>
                                 <!-- </div> -->
-                              
+
                                 <div class="form-group col-12 col-md-6">
-                                   
-                                    <input type="time" class="form-control">
+                                    <h5>Hours Appointment</h5>
+                                    <input type="time" class="form-control" class="form-control"  [(ngModel)]="hours" (change)="getHours($event)" >
                                 </div>
                                 <!-- End Form -->
-                                <!-- <div class="form-group col-12 col-md-6"> -->
                                 
+                                <!-- <div class="form-group col-12 col-md-2"> -->
+                                <br/>
                                 <mat-form-field appearance="fill">
-                                    <mat-label>Service type</mat-label>
-                                    <mat-select name="employee"  ngModel required #employee="ngModel">
+                                    <mat-label>Employee</mat-label>
+                                    <mat-select name="employee" ngModel required #employee="ngModel">
                                         <!-- <mat-option>None</mat-option> -->
                                         <mat-option *ngFor="let employee of employeeAvalaible"
                                             [value]="employee">{{employee.name }} - {{employee.first_name}}</mat-option>
                                     </mat-select>
                                 </mat-form-field>
-                            <!-- </div> -->
+                                <!-- </div> -->
                                 <div class="form-group col-12 col-md-6">
                                     <button type="submit" class="btn btn-primary form-control">Create</button>
                                 </div>

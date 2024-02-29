@@ -27,6 +27,8 @@ export class ModalMeetUpComponent {
     dateAppointment : this.date,
     service : this.service
   } as appointment;
+
+  hours = "00:00";
    
 
 
@@ -97,7 +99,7 @@ export class ModalMeetUpComponent {
   }
 
   newAppointment(form:NgForm){
-    if(this.hoursChoice.length!==0){
+    // if(this.hoursChoice.length!==0){
       this.appointment.employee = form.value.employee
       console.log(this.appointment)
       this.apiService.SaveAppointment(this.appointment).subscribe((res:any)=>{
@@ -106,9 +108,9 @@ export class ModalMeetUpComponent {
           this.closeModal.closeModalFonction();
         }
       })
-    }else{
-      this.OpenSnackBar("Hours obligation","Error")
-    }
+    // }else{
+    //   this.OpenSnackBar("Hours obligation","Error")
+    // }
       
   }
 
@@ -118,5 +120,11 @@ export class ModalMeetUpComponent {
       panelClass:['toast-success'],
       verticalPosition:'top'
     });
+  }
+
+  getHours(event:Event){
+    console.log(this.hours);
+    this.appointment.hours = this.hours;
+    this.getEmployeeByAppoitmment();
   }
 }
