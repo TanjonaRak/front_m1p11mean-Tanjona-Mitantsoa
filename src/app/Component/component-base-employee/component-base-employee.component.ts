@@ -21,7 +21,7 @@ export class ComponentBaseEmployeeComponent {
   @ViewChild('container', { read: ViewContainerRef, static: true }) container!: ViewContainerRef;
 
   constructor(private resolver: ComponentFactoryResolver,private route: ActivatedRoute,private ServiceModal:ServiceModalService) {}
-  showComponent : string|null ="home-manager";
+  showComponent : string|null ="list-appointment";
 
   user_connected !: Employee;
 
